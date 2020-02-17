@@ -1,22 +1,11 @@
 # Assignment 1
-Maximum number of words for this document: 2500
 
 
 ## Introduction									
-Author(s): `name of the team member(s) responsible for this section`
 
-Write a short description of your version of the system you are going to design and implement in this course. 
-Clearly specify which are the key aspects of your system, such as:
-- customizations/extensions w.r.t. the project track, 
-- main type of user(s)
-- overall idea about how it works
-- ...
-
-Be creative here!
-
-Don’t forget to use links to external URLs (e.g., the direct link to the Fantasy soccer league you are getting inspiration from, the link to the original video game you are getting inspiration from, etc.), if applicable. 
-
-Maximum number of words for this section: 1000
+For this project we’re targeting users who are interested in playing Fantasy Soccer within the Premier League. By interacting with the command-line interface, this user will be able to register in an open league or create a new one. Once the league is closed, in the 24 hour period after, there will be a draft. Users will form a team, or teams, of players composed of one goalkeeper, four defenders, four midfielders, and two attackers. They may choose players from any team within the Premier league; however, if there are multiple teams, a player may only be on one team at a time. The order teams may draft players in is set randomly, or can be chosen explicitly by the league manager. After the draft, they can then schedule games between members of that league. It is only the ‘league manager,’ or user who created the league, who is able to close the league and schedule the games between teams. This user will also have the option to opt for a randomized schedule, which would pair teams at random. Matches will be ‘played’ each Sunday according to the created schedule. A team will win the match if their total score is higher than their opponents. A score is tallied by adding up the points each player on their team has earned. In our system, player statistics will be provided manually by the league manager. Players are either on a team or in the pool of free players, and for 24 hours after the last game is played on Sunday, users can swap their players for players in the pool to improve their team. They can also ask for trades with other teams. When a team receives a trade request they can accept, deny, or send an alternative request. Users will also be able to see the current ranking of the teams in their league.  
+ 
+We got inspiration from https://fantasy.premierleague.com/. We also looked at https://en.wikipedia.org/wiki/Fantasy_football_(association) for background knowledge.
 
 ## Features
 Author(s): `name of the team member(s) responsible for this section`
