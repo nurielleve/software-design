@@ -32,30 +32,32 @@ When defining the functional requirements we attempted to be as complete as poss
 
 
 ### Quality requirements
-Author(s): `name of the team member(s) responsible for this section`
+Author(s): Nuriel Leve, Amanda Patterson, Dominic Smorra, Lucy Lawrence 
 
 As a preamble to the table, you can discuss the main line of reasoning you followed for coming up with the quality requirements listed below.
 
 | ID  | Short name  | Quality attribute | Description  |
 |---|---|---|---|
-| QR1  | Commands sanity checks | Reliability  | When the player issues a command, the syntax of the command shall always get validated against the format specified in F2 |
-| QR2  | Extensible world | Maintainability  | The video game shall be easilty extendable in terms of levels, worlds, interaction points  |
-| QR3  | Instantaneous results | Responsiveness  | Once the scores of all soccer players are provided by the user, the results of the virtual matches shall be available within 1 second |
-| QR4  | ... | ... | ... |
+| QR1  | Commands sanity checks | Reliability  | When the player issues a command, the syntax of the command shall always get validated against the format specified in F1,F2, and F3. |
+| QR2  | Extensible Team | Maintainability  | The fantasy game shall be easily extendable in terms of drafting trading, calculating scores for players.  |
+| QR3  | Instantaneous results | Responsiveness  | Once the scores of all soccer players are provided by the user, the results of the virtual matches shall be available within one second. |
+| QR4  | Easy to Use | Usability | The command-line interface commands are easy to understand and intuitive for players to use.|
+| QR5  | Extensible Functions | Maintainability | The fantasy game shall be easily extendable in terms of what users can do, for example creating new leagues at any point.|
+| QR6  | Seamless Functionality | Availability | The system will not crash, such that the game can be played seamlessly by the user.|
+| QR7  | Information Security | Security | Any information provided by users can not be accessed by other users.|
+| QR8  | State Saving | Reliability | The state of the game will be maintained when the program is exited, such that the user can return to their game later.|
 
-Each quality requirement must be tagged with the corresponding quality attribute (see corresponding slides of the first lecture for knowing them).
 
 Maximum number of words for this section: 1000
 
 ### Java libraries
 Author(s): Nuriel Leve, Amanda Patterson, Dominic Smorra, Lucy Lawrence 
 
+
 | Name (with link) | Description  |
 |---|---|
-| [opencsv](http://opencsv.sourceforge.net/)| Csv parser that we will use for parsing a csv file of players in the premier league. We chose this among others because we wanted a very straightforward and simple parser. This seems to be a good balance between fulfilling all of our requirements and not being exceedingly complicated. | 
-| [JUnit](https://junit.org/junit5/) |We will use it for testing various components of the application to ensure everything works smoothly. We chose this as it is a common testing framework. Some team members already have familiarity with this library, which will help as we aim to test rapidly and efficiently. We know the importance of testing and for this reason chose to include a framework like this one. |
-| [Time4J](https://github.com/MenoData/Time4J) | We will use it for keeping track of real time throughout the season. Scheduling is very important in fantasy soccer. Drafts occur for only 24 hours, points are calculated every Sunday, and trading can only happen in a set period of time. For all of these reasons we knew we needed a way of keeping real time in our system. This seems to be a robust, but straightforward library, and as such, is ideal for our system. |
-|[ASCII Table](https://github.com/vdmeer/asciitable)| This may be helpful if we want to draw a table of the schedule of games. Fantasy Soccer is extremely statistically heavy. We want to give users the best experience possible, while still using a command line interface. We believe that utilizing this library may help us convey statistics to users in a readable manner.|
-|[args4j](http://args4j.kohsuke.org/)| This may help us parse command line arguments. As we are using a command-line interface, our program will clearly utilize many command line arguments. As with many of the other libraries we attempted to find a good balance between robustness and simplicity. We are open to the fact that as our project progresses we may need alternative command line processing power and may add additional libraries. However from where we stand now we believe this will be a suitable choice. |
+| [opencsv](http://opencsv.sourceforge.net/)   | CSV parser that we will use for parsing a csv file of players in the premier league. We chose this among others because we wanted a very straightforward and simple parser. This seems to be a good balance between fulfilling all of our requirements and not being exceedingly complicated.  | 
+| [JUnit](https://junit.org/junit5/)  | We will use it for testing various components of the application to ensure everything works smoothly. We chose this as it is a common testing framework. Some team members already have familiarity with this library, which will help as we aim to test rapidly and efficiently. We know the importance of testing and for this reason chose to include a framework like this one.  |
+| [Time4J](https://junit.org/junit5/)  | We will use it for keeping track of real time throughout the season. Scheduling is very important in fantasy soccer. Drafts occur for only 24 hours, points are calculated every Sunday, and trading can only happen in a set period of time. For all of these reasons we knew we needed a way of keeping real time in our system. This seems to be a robust, but straightforward library, and as such, is ideal for our system. |
 
 Maximum number of words for this section: 500
