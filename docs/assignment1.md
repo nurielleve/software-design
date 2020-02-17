@@ -46,7 +46,6 @@ Author(s): Nuriel Leve, Amanda Patterson, Dominic Smorra, Lucy Lawrence
 | QR8  | State Saving | Reliability | The state of the game will be maintained when the program is exited, such that the user can return to their game later.|
 
 
-Maximum number of words for this section: 1000
 
 ### Java libraries
 Author(s): Nuriel Leve, Amanda Patterson, Dominic Smorra, Lucy Lawrence 
@@ -58,4 +57,4 @@ Author(s): Nuriel Leve, Amanda Patterson, Dominic Smorra, Lucy Lawrence
 | [JUnit](https://junit.org/junit5/)  | We will use it for testing various components of the application to ensure everything works smoothly. We chose this as it is a common testing framework. Some team members already have familiarity with this library, which will help as we aim to test rapidly and efficiently. We know the importance of testing and for this reason chose to include a framework like this one.  |
 | [Time4J](https://junit.org/junit5/)  | We will use it for keeping track of real time throughout the season. Scheduling is very important in fantasy soccer. Drafts occur for only 24 hours, points are calculated every Sunday, and trading can only happen in a set period of time. For all of these reasons we knew we needed a way of keeping real time in our system. This seems to be a robust, but straightforward library, and as such, is ideal for our system. |
 
-Maximum number of words for this section: 500
+
