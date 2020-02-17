@@ -34,8 +34,6 @@ When defining the functional requirements we attempted to be as complete as poss
 ### Quality requirements
 Author(s): Nuriel Leve, Amanda Patterson, Dominic Smorra, Lucy Lawrence 
 
-As a preamble to the table, you can discuss the main line of reasoning you followed for coming up with the quality requirements listed below.
-
 | ID  | Short name  | Quality attribute | Description  |
 |---|---|---|---|
 | QR1  | Commands sanity checks | Reliability  | When the player issues a command, the syntax of the command shall always get validated against the format specified in F1,F2, and F3. |
