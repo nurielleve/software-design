@@ -48,7 +48,7 @@ Each quality requirement must be tagged with the corresponding quality attribute
 Maximum number of words for this section: 1000
 
 ### Java libraries
-Author(s): `name of the team member(s) responsible for this section`
+Author(s): Nuriel Leve, Amanda Patterson, Dominic Smorra, Lucy Lawrence 
 
 | Name (with link) | Description  |
 |---|---|
