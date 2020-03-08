@@ -45,8 +45,8 @@ To define the quality requirements we brainstormed the aspects of the system whi
 | QR4  | Easy to Use | Usability | The command-line interface commands are easy to understand and intuitive for players to use. This is important to ensure that the game is accessible even to people who have not played soccer before. Any ambiguity on the commands should be explained in a help manual.|
 | QR5  | Extensible Functions | Maintainability | The fantasy game shall be easily extendable in terms of what users can do, for example creating new leagues at any point. This will allow future developers to extend the game to add further functions (such as multiple leagues, improved readability etc)|
 | QR6  | Seamless Functionality | Availability | The system will not crash, such that the game can be played seamlessly by the user. The consequences of a crash could be data loss, making the system less reliable. The system should handle a crash by restarting the system and reverting any statistics that have not been updated to what they previously were.|
-| QR7  | Information Security | Security | Any information provided by users can not be accessed by other users.|
-| QR8  | State Saving | Reliability | The state of the game will be maintained when the program is exited, such that the user can return to their game later.|
+| QR7  | Information Security | Security | Any information provided by users can not be accessed by other users. It should be secured in a database/csv that is not accessible to users.|
+| QR8  | State Saving | Reliability | The state of the game will be maintained when the program is exited, such that the user can return to their game later. This file should not be able to be edited by users, and should be kept secure/ureadable.|
 
 
 
