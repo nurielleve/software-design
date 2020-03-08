@@ -35,14 +35,16 @@ When defining the functional requirements we attempted to be as complete as poss
 ### Quality requirements
 Author(s): Nuriel Leve, Amanda Patterson, Dominic Smorra, Lucy Lawrence 
 
+To define the quality requirements we brainstormed the aspects of the system which make it more reliable, more secure and more useable. We first went through the functional requirements of the system and decided which related requirements we could add to improve the system.
+
 | ID  | Short name  | Quality attribute | Description  |
 |---|---|---|---|
-| QR1  | Commands sanity checks | Reliability  | When the player issues a command, the syntax of the command shall always get validated against the format specified in F1,F2, and F3. |
-| QR2  | Extensible Team | Maintainability  | The fantasy game shall be easily extendable in terms of drafting trading, calculating scores for players.  |
-| QR3  | Instantaneous results | Responsiveness  | Once the scores of all soccer players are provided by the user, the results of the virtual matches shall be available within one second. |
-| QR4  | Easy to Use | Usability | The command-line interface commands are easy to understand and intuitive for players to use.|
-| QR5  | Extensible Functions | Maintainability | The fantasy game shall be easily extendable in terms of what users can do, for example creating new leagues at any point.|
-| QR6  | Seamless Functionality | Availability | The system will not crash, such that the game can be played seamlessly by the user.|
+| QR1  | Commands sanity checks | Reliability  | When a player issues a command, the syntax of the command shall be validated against the format specified in F6, such that the user’s command may always be recognised and use of the Fantasy Soccer game is consistent. |
+| QR2  | Extensible Team | Maintainability  | The fantasy game shall be easily extendable in terms of drafting, trading and calculating scores for players such that future developers may change the drafting, trading and scoring systems to potentially extend the game to work with sports other than football. Also this means that developers may make subtle changes, such as altering how the system is scored.  |
+| QR3  | Instantaneous results | Responsiveness  | Once the scores have been uploaded by the league manager, the results of the virtual matches will be available within one second. This is important to avoid significant lag in the system, making it more consistent for users. Technically, this delay depends on the system that the user is running the game on. |
+| QR4  | Easy to Use | Usability | The command-line interface commands are easy to understand and intuitive for players to use. This is important to ensure that the game is accessible even to people who have not played soccer before. Any ambiguity on the commands should be explained in a help manual.|
+| QR5  | Extensible Functions | Maintainability | The fantasy game shall be easily extendable in terms of what users can do, for example creating new leagues at any point. This will allow future developers to extend the game to add further functions (such as multiple leagues, improved readability etc)|
+| QR6  | Seamless Functionality | Availability | The system will not crash, such that the game can be played seamlessly by the user. The consequences of a crash could be data loss, making the system less reliable. The system should handle a crash by restarting the system and reverting any statistics that have not been updated to what they previously were.|
 | QR7  | Information Security | Security | Any information provided by users can not be accessed by other users.|
 | QR8  | State Saving | Reliability | The state of the game will be maintained when the program is exited, such that the user can return to their game later.|
 
