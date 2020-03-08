@@ -31,11 +31,11 @@ For each class (and data type) in the class diagram you have to provide a paragr
 
 Classes: 
 User: 
-The user class is an abstract class that represents a user of our system. The user is someone who wants to compete in a Fantasy Soccer league. As it is abstract it can’t be implemented directly, it’s children are LeagueManager and TeamManager
- Attributes: 
-name: This attribute is the name of the user. It’s a string and the user may define it. This is a private attribute. 
-privateID: This is the user’s privateID, it is essentially a password or pin. They use it to confirm their identity. This is a private attribute. 
-teams: This is a list of all the teams that the user owns. It is an array of the names of the teams. Most users will elect to only have one team, but the option to have more than one is open. This is a private attribute.   
+ - The user class is an abstract class that represents a user of our system. The user is someone who wants to compete in a Fantasy Soccer league. As it is abstract it can’t be implemented directly, it’s children are LeagueManager and TeamManager
+ - Attributes: 
+  - * *name* * : This attribute is the name of the user. It’s a string and the user may define it. This is a private attribute. 
+  - * *privateID* * : This is the user’s privateID, it is essentially a password or pin. They use it to confirm their identity. This is a private attribute. 
+  - * * teams * * : This is a list of all the teams that the user owns. It is an array of the names of the teams. Most users will elect to only have one team, but the option to have more than one is open. This is a private attribute.   
 Operations: 
 getName(): This returns the user’s name. Simple getter method. 
 setName(): This sets the user’s name.  
