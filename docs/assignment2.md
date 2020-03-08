@@ -9,17 +9,20 @@ Maximum number of words for this document: 12000
 
 | ID  | Short name  | Description  |
 |---|---|---|
-| F1  | Tags | Code snippets can be tagged via freely-defined labels called tags  |
+| F1  | Tags | The user can create and open/close the league to teams, set the schedule, and add statistics by issuing command-line commands with the following syntax: 
+**Note that these are only open to the league manager**
+command-name [target-objects]*. The available command-names are the following:
+</br> create: ...</br>close: ...</br> open: … </br>setDraftOrder: … </br>setSchedule: ...</br>randomSchedule: … </br> addStatistics: … | 
+
+Please note that we have since updated the F1. You can see our updated functional requirements in the assignment1 document on this branch. We implemented the scope of what was described in our original F1. 
 
 ### Used modeling tool
-Add here the name of the modeling tool you are using for your project.
+Draw.io
 
 ## Class diagram									
-Author(s): `name of the team member(s) responsible for this section`
+Author(s): Lucy, Nuriel, Amanda, Dominic 
 
-This chapter contains the specification of the UML class diagram of your system, together with a textual description of all its elements.
-
-`Figure representing the UML class diagram`
+Diagram here. 
 
 For each class (and data type) in the class diagram you have to provide a paragraph providing the following information:
 - Brief description about what it represents
