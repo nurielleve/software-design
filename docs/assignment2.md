@@ -20,6 +20,7 @@ Draw.io
 Author(s): Lucy, Nuriel, Amanda, Dominic 
 
 ![](images/FantasySoccerClassDiagram.png)
+why
 
 For each class (and data type) in the class diagram you have to provide a paragraph providing the following information:
 - Brief description about what it represents
