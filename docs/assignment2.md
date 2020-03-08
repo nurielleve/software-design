@@ -82,9 +82,9 @@ In this chapter you will describe the following aspects of your project:
 - The main java class is located in software-design/src/main/java/Main.java
 - The Jar file for directly executing your system is in the repo in the file SoftwareDesignIdeas.jar
 <video width="320" height="240" controls>
-  <source src="images/video_small.mov" type="video/mp4">
+  <source src="video_small.mov" type="video/mp4">
 </video>
-![](images/video_small.mov)
+
 
 
 IMPORTANT: remember that your implementation must be consistent with your UML models. Also, your implementation must run without the need from any other external software or tool. Failing to meet this requirement means 0 points for the implementation part of your project.
