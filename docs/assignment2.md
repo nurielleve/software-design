@@ -26,6 +26,7 @@ Classes:
 The user class is an abstract class that represents a user of our system. The user is someone who wants to compete in a Fantasy Soccer league. As it is abstract it can’t be implemented directly, it’s children are LeagueManager and TeamManager
 
 Attributes: 
+
 *name*: This attribute is the name of the user. It’s a string and the user may define it. This is a private attribute. 
 
 *privateID*: This is the user’s privateID, it is essentially a password or pin. They use it to confirm their identity. This is a private attribute. 
@@ -34,6 +35,7 @@ Attributes:
 
 
 Operations: 
+
 *getName()*: This returns the user’s name. Simple getter method.
 
 *setName()*: This sets the user’s name.  
@@ -52,6 +54,7 @@ Operations:
 
 
 Associations: 
+
 This class is the parent class of TeamManager and LeagueManager. There is an inheritance relationship between them.  
  
 
@@ -61,9 +64,11 @@ This class is the parent class of TeamManager and LeagueManager. There is an inh
 The **LeagueManager** is the user that creates the league and runs the league. There can only be one **LeagueManager**. They have the ability to open/close the league, set and start the draft, add player statistics and confirm the schedule. It is the child of user so it inherits all of its attributes.   
 
 Attributes: 
+
 8leagueName*: This is the name of the league that the league manager created. 
 
 Operations: 
+
 *getLeagueName()*: This returns the name leagueName. 
 
 *close()*: This operation closes the league, meaning that no other teams can join at this point. 
@@ -76,7 +81,8 @@ Operations:
 
 *scheduler()*: This creates the schedule for the league. The league manager must call this to initiate the schedule and then must confirm it.  
 
-Associations: 
+Associations:
+
 It is the child of user so there is an inheritance relationship. 
 
 **LeagueManager** creates **League**. This association is 1 to 1. Each league manager must create exactly one league and each league must be created by said league manager. 
@@ -87,6 +93,7 @@ It is the child of user so there is an inheritance relationship.
 This is the league class. This is what runs the fantasy soccer league. All the teams are held here and all of the information about the league.  
 
 Attributes: 
+
 *name*: This is the name of the league. 
 
 *owner*: This is the name of the owner of the league, so the league manager. 
@@ -102,6 +109,7 @@ Attributes:
 *open*: This is a flag that determines whether a league is open or closed. 1 for open, 0 for closed.  
 
 Operations: 
+
 *open()*: This opens the league by changing the open flag. 
 
 *close()*: This closes the league.  
@@ -125,6 +133,7 @@ Operations:
 *setSchedule()*: This sets scheduledMatches. 
 
 Associations: 
+
 **League** has a composition association with **Team**. A team is part of a league and cannot exist without the league. For every league there must be 0 to 16 teams and a team must be in exactly one league. Teams are held in the arraylist teams.  
 
 **League** has a composition association with **FootballPool**. This is a one-to-one relationship. Each league must have exactly one football pool and a football pool must be a part of exactly one league.    
@@ -138,6 +147,7 @@ League has an association with **MatchUp**. The league runs the matchups. A leag
 A player is a soccer player in the premier league. This has all the information about said player, including their statistics and what local league team they are on.  
 
 Attributes:  
+
 *name*: This is the player’s real world name. 
 
 *premierTeam*: This is the name of the premier league team that they play on. 
@@ -153,6 +163,7 @@ Attributes:
 *avgScore*: This is a derived attribute from pointsRecord. It gives their average score per week.  
 
 Operations: 
+
 *getName()*: Getter method that returns a name.
 
 *getPremierTeam()*: Getter method that returns premierTeam.
@@ -172,6 +183,7 @@ Operations:
 *updateAvgScore()*: This computes the average score from the points record.  
 
 Associations: 
+
 A **Player** has a composition relationship with **FootballPool**. A player is a part of a **FootballPool** and cannot exist if the pool doesn’t exist. For every pool there must be one or more players and each player must be in exactly one pool.  
 
 A **Player** has a shared aggregation relationship with a team.  A team is a collection of players, but a player may exist even if the team was removed from the league. There must be 11 players on a team and a player may be on 1 or 0 teams. 
@@ -183,6 +195,7 @@ A **Player** has a shared aggregation relationship with a team.  A team is a col
 A team is a collection of player objects, which represents a soccer team. It also records relevant information on the team and players.
 
 Attributes:
+
 *owner*: this represents the user of the program who owns the team, the team manager. 
 *name*: this is the name of the team.
 *defenderArray*, *midfielderArray8*, and *forwardsArray* store the players in their respective positions.
@@ -190,6 +203,7 @@ Attributes:
 *record*: this is an array list which stores the previous scores of the team.
 
 Operations:
+
 *getName()*: accessor method for the name attribute.
 *getOwner()*: accessor method for the owner attribute.
 *removePlayer()*: a method to remove a player from the team.
@@ -198,6 +212,7 @@ Operations:
 *getRecord()*: an accessor method to access the record of a team.   
 
 Associations: 
+
 A **Team** has an association with **MatchUp**. A team competes in a matchup. It may compete in one or many matchups. For each **MatchUp** there are exactly two teams. 
 
 
@@ -207,10 +222,12 @@ A **Team** has an association with **MatchUp**. A team competes in a matchup. It
 **TeamManager** is a child class of **User**. It represents the users who create a team in our system in order to play fantasy soccer. They are all users except the LeagueManager.  
 
 Operations: 
+
 *joinLeague()*: This adds the user to the open league. 
 *leaveLeague()*: This will remove the user and any of their teams from the league.  
 
 Associations: 
+
 **TeamManager** has an inheritance relationship with **User**. It is a child class of **User**. 
 It also has an association with **Team**. A **TeamManager** owns a Team. They create the team and then have ownership over it. A **TeamManager** may have one or more teams. Each Team must have exactly one **TeamManager**. 
  
@@ -218,12 +235,14 @@ It also has an association with **Team**. A **TeamManager** owns a Team. They cr
 **FootballPool** is a class that contains arrays of all of the available **Player** objects sorted by position.
 
 Attributes: 
+
 *defenders*: An ArrayList of **Player** objects that play defender in real life
 *midfielders*: An ArrayList of **Player** objects that play midfield in real life
 *forwards*: An ArrayList of **Player** objects that play forward in real life
 *goalies*: An ArrayList of **Player** objects that play goalie in real life
 
 Operations: 
+
 *getDefenders()*: Accessor method for the defenders attribute
 *getMidfielders()*: Accessor method for the midfielders attribute
 *getForwards()*: Accessor method for the forwards attribute
@@ -234,6 +253,7 @@ Operations:
 *addG()*: Adds a goalie **Player** to the defenders attribute
 
 Associations:
+
 The ArrayLists are composed of many **Player** objects
  
  
@@ -241,18 +261,21 @@ The ArrayLists are composed of many **Player** objects
 **Matchup** is a class that is used to pair two teams against each other to see which teams score the highest. Whichever team scores the highest wins the match. Matchups are played weekly until the season is over
 
 Attributes:
+
 *team1*: A string representing the name of the first team participating in the matchup
 *team2*: A string representing the name of the second team participating in the matchup
 *team1points*: An integer representing the score of the first team 
 *team2points*: An integer representing the score of the second team 
 *gamedate*: An integer representing the date of the matchup
 
-Operations
+Operations:
+
 *getDate()*: An accessor method to receive the date attribute
 *calcPoints()*: An accessor method to calculate the score of the game and return it
 *updateScores()*: A method used to update the scores of the game
 
-Associations
+Associations:
+
 The **League** class runs each **Matchup** each week.
 **Teams** compete in **Matchups**
 
