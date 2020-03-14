@@ -47,6 +47,20 @@ public class LeagueManager extends User {
         out.println("This is a League Manager command. Please input your 4 digit ID:");
         int givenid = in.nextInt();
         if(givenid == this.getPrivateID()) {
+            
+            /* 
+            Nit: repeated code. Avoid to repeat multiple lines of code which are exactly the same, as in the following for loops.
+             You might want to use a function as :
+             
+             updateStats(parameters which vary){
+                 your for loop...
+              }
+              
+              parameters which vary may be: myLeague.getPool().getDefenders() or myLeague.getPool().getMidfielders().
+              Save them in variable and pass them to the function. Then, you can call the function multiple times without using 
+              multiple for loops.
+              */
+            
             for (int i = 0; i < myLeague.getPool().getDefenders().size(); i++) {
                 out.println("Please input the # of Fantasy Points that " + myLeague.getPool().getDefenders().get(i).getName() +
                         " earned this week:");
