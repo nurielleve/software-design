@@ -23,7 +23,7 @@ For each application of any design pattern you have to provide a table conformin
 
 | ID  | DP1  |
 |---|---|
-| **Design pattern**  | Singleton |
+| **Design Pattern**  | Singleton |
 | **Problem**  | In our fantasy football system, team and league managers will be able to create their own team, selecting 11 members from a list of premier players. This list will contain all the official football players in the world with their stats. There can only be one instance of this pool because each player can only exist once in the list. If there were multiple objects of the premier player pool, team and league managers will be able to select the same players from the different instances of the pool. That means one user could select Lionel Messi from PremierPlayerPool1 while another could select him from PremierPlayerPool2. |
 | **Solution**  | We will use the singleton design pattern to create only one instance of the premier player pool. This will solve our issue because the team and league managers will only be able to add one specific player from the premier player list. This will control the access to the pool, giving all the users the ability to view all the players’ stats and add them to their team without creating multiple instances of those players.  With the premier player list as a single object, all the football players and the pool itself will be public for the users to look at and go through. This will assist our system to make it run smoothly and prevent information leakage to occur in our program. Moreover, we won’t have to worry about multiple player and pool objects occurring within the system. |
 | **Intended use**  |  |
