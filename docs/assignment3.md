@@ -1,3 +1,4 @@
+
 # Assignment 3
 
 Maximum number of words for this document: 18000
@@ -14,7 +15,7 @@ Provide a bullet list summarizing all the changes you performed in Assignment 2 
 Maximum number of words for this section: 1000
 
 ### Application of design patterns
-Author(s): `name of the team member(s) responsible for this section`
+Author(s): Nuriel, 
 
 `Figure representing the UML class diagram in which all the applied design patterns are highlighted graphically (for example with a red rectangle/circle with a reference to the ID of the applied design pattern`
 
@@ -22,12 +23,12 @@ For each application of any design pattern you have to provide a table conformin
 
 | ID  | DP1  |
 |---|---|
-| **Design pattern**  | Name of the applied pattern |
-| **Problem**  | A paragraph describing the problem you want to solve |
-| **Solution**  | A paragraph describing why with the application of the design pattern you solve the identified problem |
-| **Intended use**  | A paragraph describing how you intend to use at run-time the objects involved in the applied design patterns (you can refer to small sequence diagrams here if you want to detail how the involved parties interact at run-time |
-| **Constraints**  | Any additional constraints that the application of the design pattern is imposing, if any |
-| **Additional remarks**  | Optional, only if needed |
+| **Design pattern**  | Singleton |
+| **Problem**  | In our fantasy football system, team and league managers will be able to create their own team, selecting 11 members from a list of premier players. This list will contain all the official football players in the world with their stats. There can only be one instance of this pool because each player can only exist once in the list. If there were multiple objects of the premier player pool, team and league managers will be able to select the same players from the different instances of the pool. That means one user could select Lionel Messi from PremierPlayerPool1 while another could select him from PremierPlayerPool2. |
+| **Solution**  |  |
+| **Intended use**  |  |
+| **Constraints**  |  |
+| **Additional remarks**  |  |
 
 Maximum number of words for this section: 2000
 
