@@ -7,14 +7,14 @@ Maximum number of words for this document: 18000
 
 **Format**: establish formatting conventions when describing your models in this document. For example, you style the name of each class in bold, whereas the attributes, operations, and associations as underlined text, objects are in italic, etc.
 
-## Summary of changes of Assignment 2
+## Summary of Changes of Assignment 2
 Author(s): `name of the team member(s) responsible for this section`
 
 Provide a bullet list summarizing all the changes you performed in Assignment 2 for addressing our feedback.
 
 Maximum number of words for this section: 1000
 
-## Application of design patterns
+## Application of Design Patterns
 Author(s): Nuriel, 
 
 `Figure representing the UML class diagram in which all the applied design patterns are highlighted graphically (for example with a red rectangle/circle with a reference to the ID of the applied design pattern`
@@ -42,7 +42,7 @@ For each application of any design pattern you have to provide a table conformin
 
 Maximum number of words for this section: 2000
 
-## Class diagram									
+## Class Diagram									
 Author(s): Lucy, Nuriel, Amanda, Dominic 
 
 ![](images/FantasySoccerClassDiagram.png)
@@ -333,7 +333,7 @@ The **League** class runs each **Matchup** each week.
 
 Maximum number of words for this section: 4000
 
-## Object diagrams								
+## Object Diagram								
 Author(s): `name of the team member(s) responsible for this section`
 
 This chapter contains the description of a "snapshot" of the status of your system during its execution. 
@@ -345,7 +345,7 @@ This chapter is composed of a UML object diagram of your system, together with a
 
 Maximum number of words for this section: 1000
 
-## State machine diagrams									
+## State Machine Diagrams									
 Author(s): `name of the team member(s) responsible for this section`
 
 This chapter contains the specification of at least 2 UML state machines of your system, together with a textual description of all their elements. Also, remember that classes the describe only data structures (e.g., Coordinate, Position) do not need to have an associated state machine since they can be seen as simple "data containers" without behaviour (they have only stateless objects).
@@ -359,7 +359,7 @@ The goal of your state machine diagrams is both descriptive and prescriptive, so
 
 Maximum number of words for this section: 4000
 
-## Sequence diagrams									
+## Sequence Diagrams									
 Author(s): `name of the team member(s) responsible for this section`
 
 This chapter contains the specification of at least 2 UML sequence diagrams of your system, together with a textual description of all its elements. Here you have to focus on specific situations you want to describe. For example, you can describe the interaction of player when performing a key part of the videogame, during a typical execution scenario, in a special case that may happen (e.g., an error situation), when finalizing a fantasy soccer game, etc.
