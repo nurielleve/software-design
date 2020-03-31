@@ -79,7 +79,7 @@ Operations:
 
 Associations: 
 
-⋅⋅⋅This class is the parent class of TeamManager and LeagueManager. There is an inheritance relationship between them.  
+This class is the parent class of TeamManager and LeagueManager. There is an inheritance relationship between them.  
  
 
 ### LeagueManager 
