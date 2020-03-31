@@ -47,19 +47,19 @@ Author(s): Lucy, Nuriel, Amanda, Dominic
 
 ![](images/FantasySoccerClassDiagram.png)
 
-###Classes 
+### Classes 
 
-####User: 
+#### User: 
 The user class is an abstract class that represents a user of our system. The user is someone who wants to compete in a Fantasy Soccer league. As it is abstract it can’t be implemented directly, it’s children are LeagueManager and TeamManager
 
 
 Attributes: 
 
-⋅⋅* *name*: This attribute is the name of the user. It’s a string and the user may define it. This is a private attribute. 
++ *name*: This attribute is the name of the user. It’s a string and the user may define it. This is a private attribute. 
 
-⋅⋅* *privateID*: This is the user’s privateID, it is essentially a password or pin. They use it to confirm their identity. This is a private attribute. 
++ *privateID*: This is the user’s privateID, it is essentially a password or pin. They use it to confirm their identity. This is a private attribute. 
 
-⋅⋅* *teams*: This is a list of all the teams that the user owns. It is an array of the names of the teams. Most users will elect to only have one team, but the option to have more than one is open. This is a private attribute. 
++ *teams*: This is a list of all the teams that the user owns. It is an array of the names of the teams. Most users will elect to only have one team, but the option to have more than one is open. This is a private attribute. 
 
 Operations: 
 
@@ -84,7 +84,7 @@ Associations:
 This class is the parent class of TeamManager and LeagueManager. There is an inheritance relationship between them.  
  
 
-####LeagueManager: 
+#### LeagueManager: 
 The **LeagueManager** is the user that creates the league and runs the league. There can only be one **LeagueManager**. They have the ability to open/close the league, set and start the draft, add player statistics and confirm the schedule. It is the child of user so it inherits all of its attributes.   
 
 
@@ -115,7 +115,7 @@ It is the child of user so there is an inheritance relationship.
 **LeagueManager** also owns one or more team. They would create the team and then run it, by selecting players, doing trades, etc.  
 
 
-####League:
+#### League:
 This is the league class. This is what runs the fantasy soccer league. All the teams are held here and all of the information about the league.  
 
 
@@ -168,7 +168,7 @@ Associations:
 League has an association with **MatchUp**. The league runs the matchups. A league runs one to many matchups, but a matchup can only exist within exactly one league. 
 
 
-####Player: 
+#### Player: 
 A player is a soccer player in the premier league. This has all the information about said player, including their statistics and what local league team they are on.  
 
 
@@ -250,7 +250,7 @@ Associations:
 A **Team** has an association with **MatchUp**. A team competes in a matchup. It may compete in one or many matchups. For each **MatchUp** there are exactly two teams. 
 
 
-####TeamManager:
+#### TeamManager:
 **TeamManager** is a child class of **User**. It represents the users who create a team in our system in order to play fantasy soccer. They are all users except the LeagueManager.  
 
 
@@ -266,7 +266,7 @@ Associations:
 It also has an association with **Team**. A **TeamManager** owns a Team. They create the team and then have ownership over it. A **TeamManager** may have one or more teams. Each Team must have exactly one **TeamManager**. 
  
  
-####FootballPool:
+#### FootballPool:
 **FootballPool** is a class that contains arrays of all of the available **Player** objects sorted by position.
 
 
@@ -303,7 +303,7 @@ Associations:
 The ArrayLists are composed of many **Player** objects
  
  
-####Matchup:
+#### Matchup:
 **Matchup** is a class that is used to pair two teams against each other to see which teams score the highest. Whichever team scores the highest wins the match. Matchups are played weekly until the season is over
 
 
