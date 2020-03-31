@@ -47,7 +47,6 @@ Author(s): Lucy, Nuriel, Amanda, Dominic
 
 ![](images/FantasySoccerClassDiagram.png)
 
-
 ### User 
 The user class is an abstract class that represents a user of our system. The user is someone who wants to compete in a Fantasy Soccer league. As it is abstract it can’t be implemented directly, it’s children are LeagueManager and TeamManager
 
@@ -80,7 +79,7 @@ Operations:
 
 Associations: 
 
-This class is the parent class of TeamManager and LeagueManager. There is an inheritance relationship between them.  
+⋅⋅⋅This class is the parent class of TeamManager and LeagueManager. There is an inheritance relationship between them.  
  
 
 ### LeagueManager 
