@@ -7,14 +7,14 @@ Maximum number of words for this document: 18000
 
 **Format**: establish formatting conventions when describing your models in this document. For example, you style the name of each class in bold, whereas the attributes, operations, and associations as underlined text, objects are in italic, etc.
 
-### Summary of changes of Assignment 2
+## Summary of changes of Assignment 2
 Author(s): `name of the team member(s) responsible for this section`
 
 Provide a bullet list summarizing all the changes you performed in Assignment 2 for addressing our feedback.
 
 Maximum number of words for this section: 1000
 
-### Application of design patterns
+## Application of design patterns
 Author(s): Nuriel, 
 
 `Figure representing the UML class diagram in which all the applied design patterns are highlighted graphically (for example with a red rectangle/circle with a reference to the ID of the applied design pattern`
