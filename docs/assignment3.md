@@ -30,6 +30,15 @@ For each application of any design pattern you have to provide a table conformin
 | **Constraints**  |  |
 | **Additional remarks**  |  |
 
+| ID  | DP2  |
+|---|---|
+| **Design Pattern**  |  |
+| **Problem**  |  |
+| **Solution**  |  |
+| **Intended use**  |  |
+| **Constraints**  |  |
+| **Additional remarks**  |  |
+
 Maximum number of words for this section: 2000
 
 ## Class diagram									
