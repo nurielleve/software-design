@@ -7,12 +7,14 @@ Maximum number of words for this document: 18000
 
 **Format**: establish formatting conventions when describing your models in this document. For example, you style the name of each class in bold, whereas the attributes, operations, and associations as underlined text, objects are in italic, etc.
 
+
 ## Summary of Changes of Assignment 2
 Author(s): `name of the team member(s) responsible for this section`
 
 Provide a bullet list summarizing all the changes you performed in Assignment 2 for addressing our feedback.
 
 Maximum number of words for this section: 1000
+
 
 ## Application of Design Patterns
 Author(s): Nuriel, 
@@ -42,10 +44,9 @@ For each application of any design pattern you have to provide a table conformin
 
 Maximum number of words for this section: 2000
 
+
 ## Class Diagram									
 Author(s): Lucy, Nuriel, Amanda, Dominic 
-
-![](images/FantasySoccerClassDiagram.png)
 
 ### User 
 The user class is an abstract class that represents a user of our system. The user is someone who wants to compete in a Fantasy Soccer league. As it is abstract it can’t be implemented directly, it’s children are LeagueManager and TeamManager
@@ -333,6 +334,7 @@ The **League** class runs each **Matchup** each week.
 
 Maximum number of words for this section: 4000
 
+
 ## Object Diagram								
 Author(s): `name of the team member(s) responsible for this section`
 
@@ -344,6 +346,7 @@ This chapter is composed of a UML object diagram of your system, together with a
 `Textual description`
 
 Maximum number of words for this section: 1000
+
 
 ## State Machine Diagrams									
 Author(s): `name of the team member(s) responsible for this section`
@@ -359,6 +362,7 @@ The goal of your state machine diagrams is both descriptive and prescriptive, so
 
 Maximum number of words for this section: 4000
 
+
 ## Sequence Diagrams									
 Author(s): `name of the team member(s) responsible for this section`
 
@@ -372,6 +376,7 @@ For each sequence diagram you have to provide:
 The goal of your sequence diagrams is both descriptive and prescriptive, so put the needed level of detail here, finding the right trade-off between understandability of the models and their precision.
 
 Maximum number of words for this section: 4000
+
 
 ## Implementation									
 Author(s): `name of the team member(s) responsible for this section`
