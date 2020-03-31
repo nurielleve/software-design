@@ -47,65 +47,64 @@ Author(s): Lucy, Nuriel, Amanda, Dominic
 
 ![](images/FantasySoccerClassDiagram.png)
 
-Classes: 
-**User**: 
+###Classes 
+
+####User: 
 The user class is an abstract class that represents a user of our system. The user is someone who wants to compete in a Fantasy Soccer league. As it is abstract it can’t be implemented directly, it’s children are LeagueManager and TeamManager
+
 
 Attributes: 
 
-*name*: This attribute is the name of the user. It’s a string and the user may define it. This is a private attribute. 
+⋅⋅* *name*: This attribute is the name of the user. It’s a string and the user may define it. This is a private attribute. 
 
-*privateID*: This is the user’s privateID, it is essentially a password or pin. They use it to confirm their identity. This is a private attribute. 
+⋅⋅* *privateID*: This is the user’s privateID, it is essentially a password or pin. They use it to confirm their identity. This is a private attribute. 
 
-*teams*: This is a list of all the teams that the user owns. It is an array of the names of the teams. Most users will elect to only have one team, but the option to have more than one is open. This is a private attribute. 
-
+⋅⋅* *teams*: This is a list of all the teams that the user owns. It is an array of the names of the teams. Most users will elect to only have one team, but the option to have more than one is open. This is a private attribute. 
 
 Operations: 
 
-*getName()*: This returns the user’s name. Simple getter method.
+⋅⋅* *getName()*: This returns the user’s name. Simple getter method.
 
-*setName()*: This sets the user’s name.  
+⋅⋅* *setName()*: This sets the user’s name.  
 
-*getPrivateID()*: This returns the user’s privateID.  
+⋅⋅* *getPrivateID()*: This returns the user’s privateID.  
 
-*setPrivateID()*: This set the user’s privateID. 
+⋅⋅* *setPrivateID()*: This set the user’s privateID. 
 
-*dropPlayer()*: This removes the specified player from the team associated with the user.
+⋅⋅* *dropPlayer()*: This removes the specified player from the team associated with the user.
 
-*draftPlayer()*: This adds the specified player to the team of the user. It will also check that the makeup of the team is still valid (correct number of forwards, goalies, etc.) and that the player is free to be drafted. 
+⋅⋅* *draftPlayer()*: This adds the specified player to the team of the user. It will also check that the makeup of the team is still valid (correct number of forwards, goalies, etc.) and that the player is free to be drafted. 
 
-*tradePlayer()*: This proposes a trade of two players. The first player specified is the one that the user is hoping to give away and the second is the one that the user is hoping to gain, but is currently on someone else’s team. The owner of the other team would have to approve the trade for it to go through. 
+⋅⋅* *tradePlayer()*: This proposes a trade of two players. The first player specified is the one that the user is hoping to give away and the second is the one that the user is hoping to gain, but is currently on someone else’s team. The owner of the other team would have to approve the trade for it to go through. 
 
 *createNewTeam()*: This allows the user to create a new team. It would be added to their list of teams.   
-
 
 Associations: 
 
 This class is the parent class of TeamManager and LeagueManager. There is an inheritance relationship between them.  
  
 
-
-
-**LeagueManager**: 
+####LeagueManager: 
 The **LeagueManager** is the user that creates the league and runs the league. There can only be one **LeagueManager**. They have the ability to open/close the league, set and start the draft, add player statistics and confirm the schedule. It is the child of user so it inherits all of its attributes.   
+
 
 Attributes: 
 
-*leagueName*: This is the name of the league that the league manager created. 
+⋅⋅* *leagueName*: This is the name of the league that the league manager created. 
 
 Operations: 
 
-*getLeagueName()*: This returns the name leagueName. 
+⋅⋅* *getLeagueName()*: This returns the name leagueName. 
 
-*close()*: This operation closes the league, meaning that no other teams can join at this point. 
+⋅⋅* *close()*: This operation closes the league, meaning that no other teams can join at this point. 
 
-*open()*: This does the opposite of close, it opens the league so that teams may join.
+⋅⋅* *open()*: This does the opposite of close, it opens the league so that teams may join.
 
-*addStatistics()*: This allows the league manager to input statistics for every player in the league. They input how many fantasy points they have earned for the week. This is stored in the player’s record. 
+⋅⋅* *addStatistics()*: This allows the league manager to input statistics for every player in the league. They input how many fantasy points they have earned for the week. This is stored in the player’s record. 
 
-*setDraftOrder()*: The league manager inputs the order in which teams can select players in the draft.  
+⋅⋅* *setDraftOrder()*: The league manager inputs the order in which teams can select players in the draft.  
 
-*scheduler()*: This creates the schedule for the league. The league manager must call this to initiate the schedule and then must confirm it.  
+⋅⋅* *scheduler()*: This creates the schedule for the league. The league manager must call this to initiate the schedule and then must confirm it.  
 
 Associations:
 
@@ -115,48 +114,50 @@ It is the child of user so there is an inheritance relationship.
 
 **LeagueManager** also owns one or more team. They would create the team and then run it, by selecting players, doing trades, etc.  
 
-**League**:
+
+####League:
 This is the league class. This is what runs the fantasy soccer league. All the teams are held here and all of the information about the league.  
+
 
 Attributes: 
 
-*name*: This is the name of the league. 
+⋅⋅* *name*: This is the name of the league. 
 
-*owner*: This is the name of the owner of the league, so the league manager. 
+⋅⋅* *owner*: This is the name of the owner of the league, so the league manager. 
 
-*teams*: this is a list of all of the teams that have joined the league. It is an arraylist of Team objects. 
+⋅⋅* *teams*: this is a list of all of the teams that have joined the league. It is an arraylist of Team objects. 
 
-*myPool*: This is a FootballPool object. It is the pool of free premier league soccer players. 
+⋅⋅* *myPool*: This is a FootballPool object. It is the pool of free premier league soccer players. 
 
-*draftOrder*: This holds the order that the teams will draft players in.  
+⋅⋅* *draftOrder*: This holds the order that the teams will draft players in.  
 
-*scheduledMatches*: This is the schedule of the matches to be played. It is a 2D array and has as many columns as teams and rows as weeks in the season. Each index has a team and the first and second teams have a game, third and fourth, and so on.  
+⋅⋅* *scheduledMatches*: This is the schedule of the matches to be played. It is a 2D array and has as many columns as teams and rows as weeks in the season. Each index has a team and the first and second teams have a game, third and fourth, and so on.  
 
-*open*: This is a flag that determines whether a league is open or closed. 1 for open, 0 for closed.  
+⋅⋅* *open*: This is a flag that determines whether a league is open or closed. 1 for open, 0 for closed.  
 
 Operations: 
 
-*open()*: This opens the league by changing the open flag. 
+⋅⋅* *open()*: This opens the league by changing the open flag. 
 
-*close()*: This closes the league.  
+⋅⋅* *close()*: This closes the league.  
 
-*getName()*: This returns the league name. 
+⋅⋅* *getName()*: This returns the league name. 
 
-*setName()*: This sets the league’s name. 
+⋅⋅* *setName()*: This sets the league’s name. 
 
-*getOwner()*: This returns the owner of the league, the league manager. 
+⋅⋅* *getOwner()*: This returns the owner of the league, the league manager. 
 
-*getPool()*: This returns the **FootballPool** object, myPool. 
+⋅⋅* *getPool()*: This returns the **FootballPool** object, myPool. 
 
-*getTeams()*: This returns the arraylist teams. 
+⋅⋅* *getTeams()*: This returns the arraylist teams. 
 
-*getDraftOrder()*: This returns draftOrder.
+⋅⋅* *getDraftOrder()*: This returns draftOrder.
 
-*setDraftOrder()*: This sets draftOrder. 
+⋅⋅* *setDraftOrder()*: This sets draftOrder. 
 
-*getScheduledMatches()*: This returns the schedule of the matches. 
+⋅⋅* *getScheduledMatches()*: This returns the schedule of the matches. 
 
-*setSchedule()*: This sets scheduledMatches. 
+⋅⋅* *setSchedule()*: This sets scheduledMatches. 
 
 Associations: 
 
@@ -165,48 +166,47 @@ Associations:
 **League** has a composition association with **FootballPool**. This is a one-to-one relationship. Each league must have exactly one football pool and a football pool must be a part of exactly one league.    
 
 League has an association with **MatchUp**. The league runs the matchups. A league runs one to many matchups, but a matchup can only exist within exactly one league. 
- 
 
 
-
-**Player**: 
+####Player: 
 A player is a soccer player in the premier league. This has all the information about said player, including their statistics and what local league team they are on.  
+
 
 Attributes:  
 
-*name*: This is the player’s real world name. 
+⋅⋅* *name*: This is the player’s real world name. 
 
-*premierTeam*: This is the name of the premier league team that they play on. 
+⋅⋅* *premierTeam*: This is the name of the premier league team that they play on. 
 
-*position*: This is their position. Either ‘d’,’m’,’f’ or ‘g’ for defense, midfield, forward or goalie. 
+⋅⋅* *position*: This is their position. Either ‘d’,’m’,’f’ or ‘g’ for defense, midfield, forward or goalie. 
 
-*leagueTeam*: This is the name of the team they are on in the league, or it is the empty string if they are not yet drafted. 
+⋅⋅* *leagueTeam*: This is the name of the team they are on in the league, or it is the empty string if they are not yet drafted. 
 
-*currentWeeksScore*: This is the number of fantasy points they earned in the most recent week.  
+⋅⋅* *currentWeeksScore*: This is the number of fantasy points they earned in the most recent week.  
 
-*pointsRecord*: This is the record of all the points they have earned week by week. 
+⋅⋅* *pointsRecord*: This is the record of all the points they have earned week by week. 
 
-*avgScore*: This is a derived attribute from pointsRecord. It gives their average score per week.  
+⋅⋅* *avgScore*: This is a derived attribute from pointsRecord. It gives their average score per week.  
 
 Operations: 
 
-*getName()*: Getter method that returns a name.
+⋅⋅* *getName()*: Getter method that returns a name.
 
-*getPremierTeam()*: Getter method that returns premierTeam.
+⋅⋅* *getPremierTeam()*: Getter method that returns premierTeam.
 
-*getPosition()*: Getter method that returns position.
+⋅⋅* *getPosition()*: Getter method that returns position.
 
-*getLeagueTeam()*: Getter method that returns leagueTeam.
+⋅⋅* *getLeagueTeam()*: Getter method that returns leagueTeam.
 
-*setLeagueTeam()*: This sets leagueTeam for a player.  
+⋅⋅* *setLeagueTeam()*: This sets leagueTeam for a player.  
 
-*getPointsRecord()*: Getter method that returns pointsRecord.
+⋅⋅* *getPointsRecord()*: Getter method that returns pointsRecord.
 
-*addPointsRecord()*: This adds a week of points onto pointsRecord.  
+⋅⋅* *addPointsRecord()*: This adds a week of points onto pointsRecord.  
 
-*isFree()*: Returns true if the player is not on a local league team. 
+⋅⋅* *isFree()*: Returns true if the player is not on a local league team. 
 
-*updateAvgScore()*: This computes the average score from the points record.  
+⋅⋅* *updateAvgScore()*: This computes the average score from the points record.  
 
 Associations: 
 
@@ -215,90 +215,117 @@ A **Player** has a composition relationship with **FootballPool**. A player is a
 A **Player** has a shared aggregation relationship with a team.  A team is a collection of players, but a player may exist even if the team was removed from the league. There must be 11 players on a team and a player may be on 1 or 0 teams. 
 
 
-
-
-**Team**:
+####Team:
 A team is a collection of player objects, which represents a soccer team. It also records relevant information on the team and players.
+
 
 Attributes:
 
-*owner*: this represents the user of the program who owns the team, the team manager. 
-*name*: this is the name of the team.
-*defenderArray*, *midfielderArray*, and *forwardsArray* store the players in their respective positions.
-*goalie*: this is a Player attribute which stores the goalie of the team.
-*record*: this is an array list which stores the previous scores of the team.
+⋅⋅* *owner*: this represents the user of the program who owns the team, the team manager. 
+
+⋅⋅* *name*: this is the name of the team.
+
+⋅⋅* *defenderArray*, *midfielderArray*, and *forwardsArray* store the players in their respective positions.
+
+⋅⋅* *goalie*: this is a Player attribute which stores the goalie of the team.
+
+⋅⋅* *record*: this is an array list which stores the previous scores of the team.
 
 Operations:
 
-*getName()*: accessor method for the name attribute.
-*getOwner()*: accessor method for the owner attribute.
-*removePlayer()*: a method to remove a player from the team.
-*addPlayer()*: a method to add a player to a team.
-*getPlayers()*: an accessor method to access the players on a team.
-*getRecord()*: an accessor method to access the record of a team.   
+⋅⋅* *getName()*: accessor method for the name attribute.
+
+⋅⋅* *getOwner()*: accessor method for the owner attribute.
+
+⋅⋅* *removePlayer()*: a method to remove a player from the team.
+
+⋅⋅* *addPlayer()*: a method to add a player to a team.
+
+⋅⋅* *getPlayers()*: an accessor method to access the players on a team.
+
+⋅⋅* *getRecord()*: an accessor method to access the record of a team.   
 
 Associations: 
 
 A **Team** has an association with **MatchUp**. A team competes in a matchup. It may compete in one or many matchups. For each **MatchUp** there are exactly two teams. 
 
 
-
-
-**TeamManager**
+####TeamManager:
 **TeamManager** is a child class of **User**. It represents the users who create a team in our system in order to play fantasy soccer. They are all users except the LeagueManager.  
+
 
 Operations: 
 
-*joinLeague()*: This adds the user to the open league. 
-*leaveLeague()*: This will remove the user and any of their teams from the league.  
+⋅⋅* *joinLeague()*: This adds the user to the open league. 
+
+⋅⋅* *leaveLeague()*: This will remove the user and any of their teams from the league.  
 
 Associations: 
 
 **TeamManager** has an inheritance relationship with **User**. It is a child class of **User**. 
 It also has an association with **Team**. A **TeamManager** owns a Team. They create the team and then have ownership over it. A **TeamManager** may have one or more teams. Each Team must have exactly one **TeamManager**. 
  
-**FootballPool**:
+ 
+####FootballPool:
 **FootballPool** is a class that contains arrays of all of the available **Player** objects sorted by position.
+
 
 Attributes: 
 
-*defenders*: An ArrayList of **Player** objects that play defender in real life 
-*midfielders*: An ArrayList of **Player** objects that play midfield in real life 
-*forwards*: An ArrayList of **Player** objects that play forward in real life 
-*goalies*: An ArrayList of **Player** objects that play goalie in real life
+⋅⋅* *defenders*: An ArrayList of **Player** objects that play defender in real life
+
+⋅⋅* *midfielders*: An ArrayList of **Player** objects that play midfield in real life 
+
+⋅⋅* *forwards*: An ArrayList of **Player** objects that play forward in real life
+
+⋅⋅* *goalies*: An ArrayList of **Player** objects that play goalie in real life
 
 Operations: 
 
-*getDefenders()*: Accessor method for the defenders attribute
-*getMidfielders()*: Accessor method for the midfielders attribute
-*getForwards()*: Accessor method for the forwards attribute
-*getGoalies()*: Accessor method for the goalies attribute
-*addD()*: Adds a defender **Player** to the defenders attribute
-*addM()*: Adds a midfielder **Player** to the defenders attribute
-*addF()*: Adds a forward **Player** to the defenders attribute
-*addG()*: Adds a goalie **Player** to the defenders attribute
+⋅⋅* *getDefenders()*: Accessor method for the defenders attribute
+
+⋅⋅* *getMidfielders()*: Accessor method for the midfielders attribute
+
+⋅⋅* *getForwards()*: Accessor method for the forwards attribute
+
+⋅⋅* *getGoalies()*: Accessor method for the goalies attribute
+
+⋅⋅* *addD()*: Adds a defender **Player** to the defenders attribute
+
+⋅⋅* *addM()*: Adds a midfielder **Player** to the defenders attribute
+
+⋅⋅* *addF()*: Adds a forward **Player** to the defenders attribute
+
+⋅⋅* *addG()*: Adds a goalie **Player** to the defenders attribute
 
 Associations:
 
 The ArrayLists are composed of many **Player** objects
  
  
-**Matchup**
+####Matchup:
 **Matchup** is a class that is used to pair two teams against each other to see which teams score the highest. Whichever team scores the highest wins the match. Matchups are played weekly until the season is over
+
 
 Attributes:
 
-*team1*: A string representing the name of the first team participating in the matchup 
-*team2*: A string representing the name of the second team participating in the matchup 
-*team1points*: An integer representing the score of the first team  
-*team2points*: An integer representing the score of the second team 
-*gamedate*: An integer representing the date of the matchup
+⋅⋅* *team1*: A string representing the name of the first team participating in the matchup 
+
+⋅⋅* *team2*: A string representing the name of the second team participating in the matchup 
+
+⋅⋅* *team1points*: An integer representing the score of the first team 
+
+⋅⋅* *team2points*: An integer representing the score of the second team 
+
+⋅⋅* *gamedate*: An integer representing the date of the matchup
 
 Operations:
 
-*getDate()*: An accessor method to receive the date attribute
-*calcPoints()*: An accessor method to calculate the score of the game and return it
-*updateScores()*: A method used to update the scores of the game
+⋅⋅* *getDate()*: An accessor method to receive the date attribute
+
+⋅⋅* *calcPoints()*: An accessor method to calculate the score of the game and return it
+
+⋅⋅* *updateScores()*: A method used to update the scores of the game
 
 Associations:
 
