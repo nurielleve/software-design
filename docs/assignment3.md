@@ -9,9 +9,14 @@ Maximum number of words for this document: 18000
 
 
 ## Summary of Changes of Assignment 2
-Author(s): `name of the team member(s) responsible for this section`
+Author(s): Amanda, Nuriel, Lucy, Dominic
 
 Provide a bullet list summarizing all the changes you performed in Assignment 2 for addressing our feedback.
+
+**Sequence Diagrams**
++ Updated the first diagram so that the user has a lifeline.
+
++ Updated the second diagram to add a break to the loop.
 
 Maximum number of words for this section: 1000
 
@@ -20,6 +25,7 @@ Maximum number of words for this section: 1000
 Author(s): Nuriel, 
 
 `Figure representing the UML class diagram in which all the applied design patterns are highlighted graphically (for example with a red rectangle/circle with a reference to the ID of the applied design pattern`
+![](images/FantasySoccerClassDiagram_final.png)
 
 For each application of any design pattern you have to provide a table conforming to the template below.
 
@@ -371,7 +377,7 @@ Maximum number of words for this section: 4000
 
 
 ## Sequence Diagrams									
-Author(s): `name of the team member(s) responsible for this section`
+Author(s): Lucy, Nuriel
 
 This chapter contains the specification of at least 2 UML sequence diagrams of your system, together with a textual description of all its elements. Here you have to focus on specific situations you want to describe. For example, you can describe the interaction of player when performing a key part of the videogame, during a typical execution scenario, in a special case that may happen (e.g., an error situation), when finalizing a fantasy soccer game, etc.
 
@@ -382,7 +388,27 @@ For each sequence diagram you have to provide:
 
 The goal of your sequence diagrams is both descriptive and prescriptive, so put the needed level of detail here, finding the right trade-off between understandability of the models and their precision.
 
-Maximum number of words for this section: 4000
+**User Validation Sequence Diagram**
+
+![](images/Seq-diagram-1.PNG)
+
+This sequence diagram depicts the user validation method. The Main class interacts with database/csv file to receive, store and validate information about the users. In this diagram the user enters their username and unique ID, which is passed to the login method in the Main class. This method will pass the details to the database/csv, which contains the username/unique ID pairs. The validation is completed and checks whether the unique ID matches the username provided. The return message determines whether or not the details were valid (if they existed in the database/csv). At this point the diagram shows two alternatives - if the details were valid then the user is logged in and a ‘validated’ return message is sent back to the Main class, if not then the user does not exist. When the user is logged in, they have access to their teams in the league, if they are not logged in then they will either have to enter the correct unique ID or create a new user (this is not shown in the diagram).
+
+**Team Creation Sequence Diagram**
+
+![](images/Seq-diagram-2.PNG)
+
+The Main and Team class pass messages containing input from the user, such as the name of the team and the player selections. The team class also sends return messages to confirm the completion of player selection. The team and league class interact through the actual instantiation of the player and team objects, which are both stored in the league object. The league class interacts with the main class by returning there in the program flow when a the player is selected and added to the team.
+The main class is the point where the user gives information about the team they want to create, this information is passed to the team class. Once the team name is entered, the team is created and stored in the league class. The league class then returns confirmation to the team class that the team has been created and stored. The team then calls the select player operation which will allow the user to select the players on their team.
+In the program, users take it in turns to select players so that the distribution of players is fair. This is not shown in the diagram for simplicity, but the user would have to wait between picking their player so that other users could pick too. The diagram shows that the program enters a loop, which repeats the selection process until the player number is 11 (at which the team is complete). When a player is selected, the selected player is passed in a message to the league class, which adds the player to the team (instantiates it and adds it to the team list). The league class then returns a confirmation message so that the program can return to the main class and another player can be selected. When the player number in the team stored in league reaches 11, a return message denoting that the team is complete is sent and the loop is exited.
+
+**League Scheduler Sequence Diagram**
+
+![](images/Seq-diagram-3.PNG)
+
+In creating a schedule for a league, the Main class first sends a message to the League manager, which will verify that the user is the league manager by asking for their 4-digit ID code. If the user enters their code correctly, they are verified as the league manager and the schedule is set. A reply message is sent back to the Main class to indicate the successful creation and storage of the league. If the user enters an incorrect ID code, then the Main class is notified by the LeagueManager class and the user is prompted to enter the correct code.
+
+Maximum number of words for this section: 3000
 
 
 ## Implementation									
