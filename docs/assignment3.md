@@ -33,14 +33,6 @@ Provide a bullet list summarizing all the changes you performed in Assignment 2 
 + Created a third sequence diagram to lay out another interaction between the classes of the system
 + Edited each diagram's textual description to go along with the changes made to them
 
-**Class Diagram**
-
-+ Updated class diagram and class diagram description to be consistent with code
-
-**State Machine Diagrams** 
-
-+ Updated State Machine Diagrams to be consistent with the class diagram and its operations
-
 **Implementation**
 + Changed user class to be abstract (error from assignment 2)
 + Created one arraylist with all the players in football pool, as opposed to having different arraylists for different positions
@@ -451,17 +443,10 @@ Maximum number of words for this section: 1000
 Author: Dominic
 
 
-![](images/League.png)
-
-Once the league is created the league is in an open state where teams can be added. Teams are added using the addTeams() operation until the league is closed and the draft order is set using the setDraftOrder() operation. The league then must enter two states before the matches can start. One being where the schedule is created using the setchedule() operation. The other being in a state of drafting. The draft starts when the runDraft() operation is called and at that point the league is in a state of drafting. Once the draft has concluded, the league then runs automatically with each matchup being played using the leagueController() operation. The league remains in this state until all matches have been played. The league then enters its final state where the final standings between the teams can be viewed. The winner of the league is determined using the calcWinner operation. After that, the season has concluded and the league is over.
+Once the league is created, the league manager can then add up to 16 teams into the league. The league is kept open by the league manager until they decide that the teams or set. Once the teams are set, the league manager then closes the league not allowing any more teams to join the league. After that, the league will then either pass into the state of setting the schedule using the setSchedule(), or staging the draft if the order has been set already using setDraftOrder(). The order of these two states being completed does not matter. While in the schedule setting state the league manager calls the operation to create a schedule for all of the participating teams in the league. While in the drafting state, each team will take turns picking a player until they are all filled. After completing the draft and setting the schedule games can now be played. The league enters the cycle between the states of statistics becoming available for players, and winners being determined for each weekly match by the league manager entering the statistics using the addSatatistics() operation. The league switches between these two states until all matches have been played. The league then enters its final state where the final standings between the teams can be viewed. After that the season has concluded and the league is over.
 
 
-![](images/Team.png)
-
-Once a team is created and drafted, the season is then played between teams. The user has the ability to make changes to a team through dropping, adding, or trading players. The Team object changes its players from these commands using the addPlayers() and removePlayers() operations. With each of these changes the Team changes states from changing the team to playing matches. Operations like adding and removing players can only be performed when there are no matches in progress. After each matchup has concluded the team then calculates its wins and losses using calcWins() and calcLosses(). Then, its record is updated using addToRecord(). Once all matches have been completed the team's season is completed and it enters the final state and its final ranking is printed. If it has the best record it wins the league.
-
-
-![](images/Matchup.png)
+Once a team is created, the team manager then has to draft their team. After the team is drafted, throughout the season the team manager has the ability to make changes to their team through dropping, adding, or trading players. These operations are done when the team manager inputs the command for which type of move to make. When the team is in the dropping state, it removes the chosen player from the team. After a player is dropped using the removePlayer() operation, teams usually add a different player. In order for the team to enter the state of adding a player, there has to be an open spot in the right position for the player to fill. Once the team does enter the adding state, the chosen player is then added to the team using the addPlayer() operation. The last operation that can be performed is trading. In order for a trade to happen, two teams have to agree to the trade. Once a team has entered the trading state, the team removes the players being traded away and adds the new players being received. The two teams use the getPlayers() operations and the team is then complete once the trade is finished. After performing one of these roster moves, the team then returns to an updated state with the new team waiting for the next move. The team then enters its final state once the season has concluded and roster moves can no longer be made.
 
 Each week contains multiple matchups between teams. Each matchup lasts one week before it is over. Once the matchup is created it is incomplete until the LM inputs the statistics. After the matchup statistics are entered, the matchup is then closed using the closeMatchup() operation. After the winner and loser, or tie is set, the matchup then transitions to the final state of it being over. The getWinner() operation is then called to report on which team won the matchup. 
 
@@ -471,15 +456,6 @@ Maximum number of words for this section: 4000
 
 ## Sequence Diagrams									
 Authors: Lucy, Nuriel
-
-This chapter contains the specification of at least 2 UML sequence diagrams of your system, together with a textual description of all its elements. Here you have to focus on specific situations you want to describe. For example, you can describe the interaction of player when performing a key part of the videogame, during a typical execution scenario, in a special case that may happen (e.g., an error situation), when finalizing a fantasy soccer game, etc.
-
-For each sequence diagram you have to provide:
-- a title representing the specific situation you want to describe;
-- a figure representing the sequence diagram;
-- a textual description of all its elements in a narrative manner (you do not need to structure your description into tables in this case). We expect a detailed description of all the interaction partners, their exchanged messages, and the fragments of interaction where they are involved. For each sequence diagram we expect a description of about 300-500 words.
-
-The goal of your sequence diagrams is both descriptive and prescriptive, so put the needed level of detail here, finding the right trade-off between understandability of the models and their precision.
 
 ### User Validation Sequence Diagram
 
