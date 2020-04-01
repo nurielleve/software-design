@@ -22,9 +22,9 @@ Maximum number of words for this section: 1000
 
 
 ## Application of Design Patterns
-Author(s): Nuriel, 
+Author(s): Nuriel, Amanda
 
-`Figure representing the UML class diagram in which all the applied design patterns are highlighted graphically (for example with a red rectangle/circle with a reference to the ID of the applied design pattern`
+`Figure representing the UML class diagram. We found it most clear to color code the design patterns as some did not require the creation of a new class- simply new methods. Everything pertaining to DP1 is highlighted in PURPLE. Everything pertaining to DP2 is highlighted in RED. `
 ![](images/FantasySoccerClassDiagram_final.png)
 
 For each application of any design pattern you have to provide a table conforming to the template below.
@@ -41,18 +41,21 @@ For each application of any design pattern you have to provide a table conformin
 
 | ID  | DP2  |
 |---|---|
-| **Design Pattern**  |  |
-| **Problem**  |  |
-| **Solution**  |  |
-| **Intended use**  |  |
+| **Design Pattern**  | Observer |
+| **Problem**  | Our problem was that once a week the ability to trade, draft, and drop players was 'turned on' within the league. The rest of the time this functionality was not available to users. We needed to league to signal to the user class that this time had started. The user class hearing this could 'activate' its trade, drop, and draft function, that it otherwise would not be allowed to use.  |
+| **Solution**  | We solved this by implementing the Observer design pattern. We created an abstract Subject class and an abstract Observer class. League extends subject and User extends observer. It is the state change in league that triggers a response from user through the implementation of the observer pattern. When the league changes its state, User is notified, and the trading, dropping and drafting functionality is available.  |
+| **Intended use**  | The league class notifies the user class every time its 'trading state' changes. This means that when it hits the time of the week that it alloted for trading, it notifies User. This way User can interally turn on and off the 'blocking mechanism' for its functions. In this case it is a simple boolean that switches. When the league is not in trading mode the functionality in user is not allowed and when the league changes to trading mode, it signals this to user and user allows this functionality. |
 | **Constraints**  |  |
-| **Additional remarks**  |  |
+| **Additional remarks**  | We recognize that this design pattern is especially helpful when many classes have actions triggered by a state change in another. At this point in time the only observer in our system is the User class, however, by implementing the observer design pattern here we have made the system much more extensible. This state change, the trading period, triggers a period where more functionality is available to users, so if more functionality were to be added it would also likely be dependent on this state change. For this reason we have added the observer design pattern into our system, even though with the current functionality it only has a neutral impact. We are weary of creating too general a system, but we believed this was a small addition that could have great future rewards." |
 
 Maximum number of words for this section: 2000
 
 
 ## Class Diagram									
 Author(s): Lucy, Nuriel, Amanda, Dominic 
+
+This diagram is color-coded. Everything pertaining to DP1 is highlighted in PURPLE. Everything pertaining to DP2 is highlighted in RED. Everything implemented for Assignment2 is in green. Pink is everything that was implemented for this assignment and originally modelled in our system. Black is changes from the original modelling that we implemented.
+![](images/FantasySoccerClassDiagram_final.png)
 
 ### User 
 The user class is an abstract class that represents a user of our system. The user is someone who wants to compete in a Fantasy Soccer league. As it is abstract it can’t be implemented directly, it’s children are LeagueManager and TeamManager
