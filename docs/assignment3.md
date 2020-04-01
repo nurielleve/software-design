@@ -417,7 +417,7 @@ Maximum number of words for this section: 4000
 ## Object Diagram								
 Author: Nuriel
 
-![](images/FantasySoccerClassDiagram_final.png)
+![](images/FantasySoccerObjectDiagram.png)
 
 
 
