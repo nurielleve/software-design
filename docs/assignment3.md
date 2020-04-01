@@ -15,16 +15,31 @@ Provide a bullet list summarizing all the changes you performed in Assignment 2 
 
 **Sequence Diagrams**
 + Updated the first diagram so that the user has a lifeline.
+<<<<<<< HEAD
 
 + Updated the second diagram to add a break to the loop.
 
+=======
++ Updated the second diagram to add a break to the loop.
+
+**Implementation**
++ Changed user class to be abstract (error from assignment 2)
++ Created one arraylist with all the players in football pool, as opposed to having different arraylists for different positions
++ Pulled out repeated code and consolidated it into functions
++ Completed implementation
+
+>>>>>>> 944aff2cb8735b17e181c7c844cae297d3ef7b37
 Maximum number of words for this section: 1000
 
 
 ## Application of Design Patterns
-Author(s): Nuriel, 
+Author(s): Nuriel, Amanda
 
+<<<<<<< HEAD
 `Figure representing the UML class diagram in which all the applied design patterns are highlighted graphically (for example with a red rectangle/circle with a reference to the ID of the applied design pattern`
+=======
+`Figure representing the UML class diagram. We found it most clear to color code the design patterns as some did not require the creation of a new class- simply new methods. Everything pertaining to DP1 is highlighted in PURPLE. Everything pertaining to DP2 is highlighted in RED. `
+>>>>>>> 944aff2cb8735b17e181c7c844cae297d3ef7b37
 ![](images/FantasySoccerClassDiagram_final.png)
 
 For each application of any design pattern you have to provide a table conforming to the template below.
@@ -41,18 +56,21 @@ For each application of any design pattern you have to provide a table conformin
 
 | ID  | DP2  |
 |---|---|
-| **Design Pattern**  |  |
-| **Problem**  |  |
-| **Solution**  |  |
-| **Intended use**  |  |
+| **Design Pattern**  | Observer |
+| **Problem**  | Our problem was that once a week the ability to trade, draft, and drop players was 'turned on' within the league. The rest of the time this functionality was not available to users. We needed to league to signal to the user class that this time had started. The user class hearing this could 'activate' its trade, drop, and draft function, that it otherwise would not be allowed to use.  |
+| **Solution**  | We solved this by implementing the Observer design pattern. We created an abstract Subject class and an abstract Observer class. League extends subject and User extends observer. It is the state change in league that triggers a response from user through the implementation of the observer pattern. When the league changes its state, User is notified, and the trading, dropping and drafting functionality is available.  |
+| **Intended use**  | The league class notifies the user class every time its 'trading state' changes. This means that when it hits the time of the week that it alloted for trading, it notifies User. This way User can interally turn on and off the 'blocking mechanism' for its functions. In this case it is a simple boolean that switches. When the league is not in trading mode the functionality in user is not allowed and when the league changes to trading mode, it signals this to user and user allows this functionality. |
 | **Constraints**  |  |
-| **Additional remarks**  |  |
+| **Additional remarks**  | We recognize that this design pattern is especially helpful when many classes have actions triggered by a state change in another. At this point in time the only observer in our system is the User class, however, by implementing the observer design pattern here we have made the system much more extensible. This state change, the trading period, triggers a period where more functionality is available to users, so if more functionality were to be added it would also likely be dependent on this state change. For this reason we have added the observer design pattern into our system, even though with the current functionality it only has a neutral impact. We are weary of creating too general a system, but we believed this was a small addition that could have great future rewards." |
 
 Maximum number of words for this section: 2000
 
 
 ## Class Diagram									
 Author(s): Lucy, Nuriel, Amanda, Dominic 
+
+This diagram is color-coded. Everything pertaining to DP1 is highlighted in PURPLE. Everything pertaining to DP2 is highlighted in RED. Everything implemented for Assignment2 is in green. Pink is everything that was implemented for this assignment and originally modelled in our system. Black is changes from the original modelling that we implemented.
+![](images/FantasySoccerClassDiagram_final.png)
 
 ### User 
 The user class is an abstract class that represents a user of our system. The user is someone who wants to compete in a Fantasy Soccer league. As it is abstract it can’t be implemented directly, it’s children are LeagueManager and TeamManager
@@ -476,16 +494,17 @@ Maximum number of words for this section: 3000
 
 
 ## Implementation									
-Author(s): `name of the team member(s) responsible for this section`
+Author(s): Amanda
 
 In this chapter you will describe the following aspects of your project:
-- the strategy that you followed when moving from the UML models to the implementation code;
-- the key solutions that you applied when implementing your system (for example, how you implemented the syntax highlighting feature of your code snippet manager, how you manage fantasy soccer matches, etc.);
-- the location of the main Java class needed for executing your system in your source code;
-- the location of the Jar file for directly executing your system;
-- the 30-seconds video showing the execution of your system (you can embed the video directly in your md file on GitHub).
+- Strategy that you followed when moving from the UML models to the implementation code: When moving from the UML models to the implementation code, the first thing that I did was to create the classes. I went through the class diagram and created classes corresponding with what we had modelled. I added all the attributes we had identified. The first operations I implemented were the getter and setter methods that we had identified as necessary. I now had the structure of the system set up, classes were made and attributes were set and usable. I then started work on the league manager commands. We had determined in the class diagram a series of commands that the league manager needed. They needed to be able to open and close their league, as well as add statistics and set the schedule of matches. I translated these commands into code and then moved onto the league commands. Additionally, during this time I was utilizing the object diagram. That was exceedingly helpful in wrapping my head around the bigger picture of our system. When I was lost or unsure where to go next I could remind myself what a ‘snapshot’ of this system would look like. From the league commands I moved onto how the user would actually interact with the system. In the main class of the system I set up the structure for inputting commands and that if no league had been set up yet the system would guide the user through setting up the system. This was fairly straight forward as I had already made use of the UML models to set up the structure of the system. This was just the final step in making it accessible to the user. 
+- Key solutions that you applied when implementing your system (for example, how you implemented the syntax highlighting feature of your code snippet manager, how you manage fantasy soccer matches, etc.): One of the key solutions I applied when implementing the system was the scheduling of matches. This was rather tricky as the system had to be able to schedule a season of matches for anywhere between two and sixteen teams. We had decided on a round robin style of matches, where every team plays every other team and the team with the best record ‘wins’ in the end. I researched a round robin scheduling algorithm and decided on a system where I had a temporary array of all of the teams. One week of matches would consist of the first and the last teams playing each other and then the second and second to last teams, and so on, until the middle two teams were matched. If there were an odd number of teams, the middle team had a bye for that week. Each ‘week’ all but the first team in the array were shifted down one spot and the last was bumped to the front. The teams were again matched in the manner described above. This continued until every team had played every other team. For n teams, this meant n-1 weeks of play, if n was even, and n weeks of play, if n was odd.  
+-Another key solution was the implementation of the leagueController class. This class actually controlled how the league ran after all teams were created and drafted, and all primary steps were complete. This class would wait for a week (4 seconds for testing purposes) and it would then prompt the league manager to input statistics and create and score all the matchups. Outputting and recording the winners. It would then change to the 'trading state' where it would allow each team a turn at trading, drafting, or dropping players, along with other commands. Then after it ran that cycle of trading, it would close these options and start the week over. 
 
-IMPORTANT: remember that your implementation must be consistent with your UML models. Also, your implementation must run without the need from any other external software or tool. Failing to meet this requirement means 0 points for the implementation part of your project.
+- The main java class for my source code can be found in software-design/implementation/main.java
+- The jar file is in the root folder of the repo called "SoftwareDesignIdeas.jar"
+- I unfortunately was unable to embed the video, but you can find it at this link on Youtube: https://youtu.be/RQAWjvIokeM . I apologize for any inconvenience.
+
 
 Maximum number of words for this section: 2000
 
