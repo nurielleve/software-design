@@ -105,7 +105,8 @@ Operations:
 
 Associations: 
 
-This class is the parent class of TeamManager and LeagueManager. There is an inheritance relationship between them.  
+This class is the parent class of TeamManager and LeagueManager. There is an inheritance relationship between them.
+This class also extends the abstract Observer class. This is an inheritance relationship. 
  
 
 ### LeagueManager 
@@ -176,7 +177,7 @@ Operations:
 
 + *getTradeFlag()*: Returns the value of the trade flag.
 
-+ *setTradeFlag()*: Used to change the value of the trade flag.   
++ *setTradeFlag()*: Used to change the value of the trade flag. Also notifies all classes that extend the Observer class.    
 
 + *open()*: This opens the league by changing the open flag. 
 
