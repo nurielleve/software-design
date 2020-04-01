@@ -417,11 +417,11 @@ Author(s): `name of the team member(s) responsible for this section`
 In this chapter you will describe the following aspects of your project:
 - the strategy that you followed when moving from the UML models to the implementation code;
 - the key solutions that you applied when implementing your system (for example, how you implemented the syntax highlighting feature of your code snippet manager, how you manage fantasy soccer matches, etc.);
-- the location of the main Java class needed for executing your system in your source code;
-- the location of the Jar file for directly executing your system;
-- the 30-seconds video showing the execution of your system (you can embed the video directly in your md file on GitHub).
 
-IMPORTANT: remember that your implementation must be consistent with your UML models. Also, your implementation must run without the need from any other external software or tool. Failing to meet this requirement means 0 points for the implementation part of your project.
+- The main java class for my source code can be found in implementation/main.java
+- The jar file is in the root folder of the repo called "SoftwareDesignIdeas.jar"
+- I unfortunately was unable to embed the video, but it is in docs/images/video_final. I apologize for any inconvenience.
+
 
 Maximum number of words for this section: 2000
 
