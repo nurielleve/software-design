@@ -418,9 +418,9 @@ In this chapter you will describe the following aspects of your project:
 - the strategy that you followed when moving from the UML models to the implementation code;
 - the key solutions that you applied when implementing your system (for example, how you implemented the syntax highlighting feature of your code snippet manager, how you manage fantasy soccer matches, etc.);
 
-- The main java class for my source code can be found in implementation/main.java
+- The main java class for my source code can be found in software-design/implementation/main.java
 - The jar file is in the root folder of the repo called "SoftwareDesignIdeas.jar"
-- I unfortunately was unable to embed the video, but it is in docs/images/video_final. I apologize for any inconvenience.
+- I unfortunately was unable to embed the video, but you can find it at this link on Youtube: https://youtu.be/RQAWjvIokeM . I apologize for any inconvenience.
 
 
 Maximum number of words for this section: 2000
