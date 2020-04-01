@@ -15,8 +15,12 @@ Provide a bullet list summarizing all the changes you performed in Assignment 2 
 
 **Sequence Diagrams**
 + Updated the first diagram so that the user has a lifeline.
-
 + Updated the second diagram to add a break to the loop.
+**Implementation**
++ Changed user class to be abstract (error from assignment 2)
++ Created one arraylist with all the players in football pool, as opposed to having different arraylists for different positions
++ Pulled out repeated code and consolidated it into functions
++ Completed implementation
 
 Maximum number of words for this section: 1000
 
