@@ -24,6 +24,9 @@ Provide a bullet list summarizing all the changes you performed in Assignment 2 
 + Edited each object's attributes and their respective values in the diagram to be consistent with the class diagram
 + Wrote up a new textual description of the object diagram since the diagram had drastic changes to accurately represent a snapshot of the Fantasy Soccer system
 
+**State Machine Diagrams**
+
+
 **Sequence Diagrams**
 + Updated the first diagram so that the user has a lifeline
 + Updated the second diagram to add a break to the loop
@@ -447,15 +450,6 @@ Once a team is created, the team manager then has to draft their team. After the
 
 Each week contains multiple matchups between teams. Each matchup lasts one week before it is over. Once the matchup is created it is incomplete until the LM inputs the statistics. After the matchup statistics are entered, the matchup is then closed using the closeMatchup() operation. After the winner and loser, or tie is set, the matchup then transitions to the final state of it being over. The getWinner() operation is then called to report on which team won the matchup. 
 
-
-This chapter contains the specification of at least 2 UML state machines of your system, together with a textual description of all their elements. Also, remember that classes the describe only data structures (e.g., Coordinate, Position) do not need to have an associated state machine since they can be seen as simple "data containers" without behaviour (they have only stateless objects).
-
-For each state machine you have to provide:
-- the name of the class for which you are representing the internal behavior;
-- a figure representing the part of state machine;
-- a textual description of all its states, transitions, activities, etc. in a narrative manner (you do not need to structure your description into tables in this case). We expect 3-4 lines of text for describing trivial or very simple state machines (e.g., those with one to three states), whereas you will provide longer descriptions (e.g., ~500 words) when describing more complex state machines.
-
-The goal of your state machine diagrams is both descriptive and prescriptive, so put the needed level of detail here, finding the right trade-off between understandability of the models and their precision.
 
 Maximum number of words for this section: 4000
 
