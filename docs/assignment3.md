@@ -66,7 +66,13 @@ Attributes:
 
 + *teams*: This is a list of all the teams that the user owns. It is an array of the names of the teams. Most users will elect to only have one team, but the option to have more than one is open. This is a private attribute. 
 
++ *canTrade*: This is a boolean indicating whether the user can make a trade. This is a private attribute.
+
+
+
 Operations: 
+
++ *update*: Updates a user. 
 
 + *getName()*: This returns the user’s name. Simple getter method.
 
@@ -84,6 +90,9 @@ Operations:
 
 + *createNewTeam()*: This allows the user to create a new team. It would be added to their list of teams.   
 
++ *checkID()*: This checks whether the id is valid and returns a boolean.   
+
+
 Associations: 
 
 This class is the parent class of TeamManager and LeagueManager. There is an inheritance relationship between them.  
@@ -99,7 +108,9 @@ Attributes:
 
 Operations: 
 
-+ *getLeagueName()*: This returns the name leagueName. 
++ *leagueSetUp()*: This allows the League Manager to setup the league. 
+
++ *setLeagueName()*: This sets the value of the leagueName. 
 
 + *close()*: This operation closes the league, meaning that no other teams can join at this point. 
 
@@ -110,6 +121,12 @@ Operations:
 + *setDraftOrder()*: The league manager inputs the order in which teams can select players in the draft.  
 
 + *scheduler()*: This creates the schedule for the league. The league manager must call this to initiate the schedule and then must confirm it.  
+
++ *startDraft()*: This allows the league manager to start the draft.   
+
++ *startSeason()*: This allows the league manager to start the fantasy season.   
+
+
 
 Associations:
 
@@ -140,7 +157,16 @@ Attributes:
 
 + *open*: This is a flag that determines whether a league is open or closed. 1 for open, 0 for closed.  
 
++ *draftFlag*: An integer to indicate that the draft is complete
+
++ *tradeFlag*: An integer to indicate that trades are allowed.   
+
+
 Operations: 
+
++ *getTradeFlag()*: Returns the value of the trade flag.
+
++ *setTradeFlag()*: Used to change the value of the trade flag.   
 
 + *open()*: This opens the league by changing the open flag. 
 
@@ -150,11 +176,19 @@ Operations:
 
 + *setName()*: This sets the league’s name. 
 
-+ *getOwner()*: This returns the owner of the league, the league manager. 
++ *setOwner()*: This sets the owner of the league, the league manager. 
 
 + *getPool()*: This returns the **FootballPool** object, myPool. 
 
 + *getTeams()*: This returns the arraylist teams. 
+
++ *addTeam()*: Adds a new team to the list of teams.
+
++ *printTeams()*: Prints all participating teams.   
+
++ *getTeamFromName()*: Returns a **Team** object associated with the given team name.
+
++ *getManagerFromName()*: Returns a **TeamManager** object associated with the given name.
 
 + *getDraftOrder()*: This returns draftOrder.
 
@@ -163,6 +197,17 @@ Operations:
 + *getScheduledMatches()*: This returns the schedule of the matches. 
 
 + *setSchedule()*: This sets scheduledMatches. 
+
++ *calcWinner()*: Calculates and returns the winner of the league.
+
++ *printRecords()*: Prints the records of all of the teams in the league.
+
++ *runDraft()*: Runs the draft for the league.
+
++ *leagueController()*: Automatically runs the league once the season starts.
+
+
+
 
 Associations: 
 
@@ -197,21 +242,22 @@ Operations:
 
 + *getName()*: Getter method that returns a name.
 
-+ *getPremierTeam()*: Getter method that returns premierTeam.
-
 + *getPosition()*: Getter method that returns position.
 
-+ *getLeagueTeam()*: Getter method that returns leagueTeam.
++ *setLeagueTeam()*: Setter method that sets the leagueTeam for the player.
 
-+ *setLeagueTeam()*: This sets leagueTeam for a player.  
++ *setCurrentWeeksScore()*: Setter method that sets the current weekly score for the player.  
 
-+ *getPointsRecord()*: Getter method that returns pointsRecord.
++ *getCurrentWeeksScore()*: Getter method that returns players current score.
 
 + *addPointsRecord()*: This adds a week of points onto pointsRecord.  
 
 + *isFree()*: Returns true if the player is not on a local league team. 
 
 + *updateAvgScore()*: This computes the average score from the points record.  
+
++ *printPlayer()*: Prints the name of the player.  
+
 
 Associations: 
 
@@ -234,7 +280,10 @@ Attributes:
 
 + *goalie*: this is a Player attribute which stores the goalie of the team.
 
-+ *record*: this is an array list which stores the previous scores of the team.
++ *teamRecord*: this is an array list which stores the previous scores of the team.
+
++ *totalPoints*: An integer displaying the total points the team currently has.  
+
 
 Operations:
 
@@ -249,6 +298,20 @@ Operations:
 + *getPlayers()*: an accessor method to access the players on a team.
 
 + *getRecord()*: an accessor method to access the record of a team.  
+
++ *printTeam()*: Prints the name of the team.
+
++ *sumPoints()*: Sums the weekly points for the team according to the player statistics. 
+
++ *getPlayerFromName()*: Returns the **Player** object associated with the inputted player name.
+
++ *addToRecord()*: Adds the last result of the teams matchup to their points and total record. 
+
++ *getTotalPoints()*: an accessor method to return the points total for the team. 
+
++ *printRecord()*: Prints the team' record. 
+
+
 
 Associations: 
 
@@ -277,31 +340,24 @@ It also has an association with **Team**. A **TeamManager** owns a Team. They cr
 
 Attributes: 
 
-+ *defenders*: An ArrayList of **Player** objects that play defender in real life.
++ *players*: An arraylist of the players on a team.
 
-+ *midfielders*: An ArrayList of **Player** objects that play midfield in real life.
++ *firstInstance*: The first instance of playerpool. 
 
-+ *forwards*: An ArrayList of **Player** objects that play forward in real life.
-
-+ *goalies*: An ArrayList of **Player** objects that play goalie in real life.
 
 Operations: 
 
-+ *getDefenders()*: Accessor method for the defenders attribute.
++ *footballPool()*: adds players to the football pool. 
 
-+ *getMidfielders()*: Accessor method for the midfielders attribute.
++ *returnInstance()*: returns the firstInstance. 
 
-+ *getForwards()*: Accessor method for the forwards attribute.
++ *getPlayers()*: returns an assayList of players. 
 
-+ *getGoalies()*: Accessor method for the goalies attribute.
++ *addPlayer()*: adds a player to the pool. 
 
-+ *addD()*: Adds a defender **Player** to the defenders attribute.
++ *printPlayers()*: prints out all the players in the pool.
 
-+ *addM()*: Adds a midfielder **Player** to the defenders attribute.
 
-+ *addF()*: Adds a forward **Player** to the defenders attribute.
-
-+ *addG()*: Adds a goalie **Player** to the defenders attribute.
 
 Associations:
 
@@ -326,11 +382,18 @@ Attributes:
 
 Operations:
 
-+ *getDate()*: An accessor method to receive the date attribute
++ *printMatch()*: prints the matchup of teams if its not over yet or the result if it is over
 
-+ *calcPoints()*: An accessor method to calculate the score of the game and return it
++ *closeMatch()*: ends the match and sets the overall result
 
-+ *updateScores()*: A method used to update the scores of the game
++ *setWinner()*: sets the winner of the matchup
+
++ *setLoser()*: sets the loser of the matchup
+
++ *setTie()*: sets the outcome as a tie if that is the case 
+
++ *getWinner()*: returns the **Team** object of the winner
+
 
 Associations:
 
