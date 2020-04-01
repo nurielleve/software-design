@@ -15,7 +15,10 @@ Provide a bullet list summarizing all the changes you performed in Assignment 2 
 
 **Sequence Diagrams**
 + Updated the first diagram so that the user has a lifeline.
+
+
 + Updated the second diagram to add a break to the loop.
+
 
 **Implementation**
 + Changed user class to be abstract (error from assignment 2)
