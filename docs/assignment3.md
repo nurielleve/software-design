@@ -25,6 +25,7 @@ Maximum number of words for this section: 1000
 Author(s): Nuriel, 
 
 `Figure representing the UML class diagram in which all the applied design patterns are highlighted graphically (for example with a red rectangle/circle with a reference to the ID of the applied design pattern`
+![](images/FantasySoccerClassDiagram_final.png)
 
 For each application of any design pattern you have to provide a table conforming to the template below.
 
