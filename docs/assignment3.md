@@ -419,6 +419,7 @@ Maximum number of words for this section: 1000
 ## State machine diagrams									
 Author(s): `Dominic`
 
+
 Once the league is created, the league manager can then add up to 16 teams into the league. The league is kept open by the league manager until they decide that the teams or set. Once the teams are set, the league manager then closes the league not allowing any more teams to join the league. After that, the league will then either pass into the state of setting the schedule using the setSchedule(), or staging the draft if the order has been set already using setDraftOrder(). The order of these two states being completed does not matter. While in the schedule setting state the league manager calls the operation to create a schedule for all of the participating teams in the league. While in the drafting state, each team will take turns picking a player until they are all filled. After completing the draft and setting the schedule games can now be played. The league enters the cycle between the states of statistics becoming available for players, and winners being determined for each weekly match by the league manager entering the statistics using the addSatatistics() operation. The league switches between these two states until all matches have been played. The league then enters its final state where the final standings between the teams can be viewed. After that the season has concluded and the league is over.
 
 
