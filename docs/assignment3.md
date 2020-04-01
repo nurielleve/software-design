@@ -15,11 +15,6 @@ Provide a bullet list summarizing all the changes you performed in Assignment 2 
 
 **Sequence Diagrams**
 + Updated the first diagram so that the user has a lifeline.
-<<<<<<< HEAD
-
-+ Updated the second diagram to add a break to the loop.
-
-=======
 + Updated the second diagram to add a break to the loop.
 
 **Implementation**
@@ -28,18 +23,13 @@ Provide a bullet list summarizing all the changes you performed in Assignment 2 
 + Pulled out repeated code and consolidated it into functions
 + Completed implementation
 
->>>>>>> 944aff2cb8735b17e181c7c844cae297d3ef7b37
 Maximum number of words for this section: 1000
 
 
 ## Application of Design Patterns
 Author(s): Nuriel, Amanda
 
-<<<<<<< HEAD
-`Figure representing the UML class diagram in which all the applied design patterns are highlighted graphically (for example with a red rectangle/circle with a reference to the ID of the applied design pattern`
-=======
 `Figure representing the UML class diagram. We found it most clear to color code the design patterns as some did not require the creation of a new class- simply new methods. Everything pertaining to DP1 is highlighted in PURPLE. Everything pertaining to DP2 is highlighted in RED. `
->>>>>>> 944aff2cb8735b17e181c7c844cae297d3ef7b37
 ![](images/FantasySoccerClassDiagram_final.png)
 
 For each application of any design pattern you have to provide a table conforming to the template below.
