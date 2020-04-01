@@ -9,7 +9,7 @@ Maximum number of words for this document: 18000
 
 
 ## Summary of Changes of Assignment 2
-Author(s): Amanda, Nuriel, Lucy, Dominic
+Authors: Amanda, Nuriel, Lucy, Dominic
 
 Provide a bullet list summarizing all the changes you performed in Assignment 2 for addressing our feedback.
 
@@ -30,7 +30,7 @@ Maximum number of words for this section: 1000
 
 
 ## Application of Design Patterns
-Author(s): Nuriel, Amanda
+Authors: Nuriel, Amanda
 
 `Figure representing the UML class diagram. We found it most clear to color code the design patterns as some did not require the creation of a new class- simply new methods. Everything pertaining to DP1 is highlighted in PURPLE. Everything pertaining to DP2 is highlighted in RED. `
 ![](images/FantasySoccerClassDiagram_final.png)
@@ -44,7 +44,6 @@ For each application of any design pattern you have to provide a table conformin
 | **Solution**  | We will use the singleton design pattern to create only one instance of the premier player pool. This will solve our issue because the team and league managers will only be able to add one specific player from the premier player list. This will control the access to the pool, giving all the users the ability to view all the players’ stats and add them to their team without creating multiple instances of those players.  With the premier player list as a single object, all the football players and the pool itself will be public for the users to look at and go through. This will assist our system to make it run smoothly and prevent information leakage to occur in our program. Moreover, we won’t have to worry about multiple player and pool objects occurring within the system. |
 | **Intended use**  | The object, premier football pool, will be used when a user wants to create/edit/redo their team. For example, let’s say a user is logged into their account and wants to add some of the players onto their already existing team. Using a method in the main class, the team manager gets access to the pool object and can view the players’ stats. They can loop through each player in the list by calling the iterator, which will send the player’s information to the user. At last, when the user wants to add that player to their team, they call the addPlayer() method to store that selected player into their team object. While multiple users have access and can view the pool at the same time, only a single premier player pool object exists in the system. |
 | **Constraints**  |  |
-| **Additional remarks**  |  |
 
 
 | ID  | DP2  |
@@ -60,7 +59,7 @@ Maximum number of words for this section: 2000
 
 
 ## Class Diagram									
-Author(s): Lucy, Nuriel, Amanda, Dominic 
+Authors: Lucy, Nuriel, Amanda, Dominic 
 
 This diagram is color-coded. Everything pertaining to DP1 is highlighted in PURPLE. Everything pertaining to DP2 is highlighted in RED. Everything implemented for Assignment2 is in green. Pink is everything that was implemented for this assignment and originally modelled in our system. Black is changes from the original modelling that we implemented.
 ![](images/FantasySoccerClassDiagram_final.png)
@@ -416,19 +415,16 @@ Maximum number of words for this section: 4000
 
 
 ## Object Diagram								
-Author(s): `name of the team member(s) responsible for this section`
+Author: Nuriel
 
-This chapter contains the description of a "snapshot" of the status of your system during its execution. 
-This chapter is composed of a UML object diagram of your system, together with a textual description of its key elements.
+![](images/FantasySoccerClassDiagram_final.png)
 
-`Figure representing the UML class diagram`
-  
-`Textual description`
+
 
 Maximum number of words for this section: 1000
 
-## State machine diagrams									
-Author(s): `Dominic`
+## State Machine Diagrams									
+Author: Dominic
 
 
 Once the league is created, the league manager can then add up to 16 teams into the league. The league is kept open by the league manager until they decide that the teams or set. Once the teams are set, the league manager then closes the league not allowing any more teams to join the league. After that, the league will then either pass into the state of setting the schedule using the setSchedule(), or staging the draft if the order has been set already using setDraftOrder(). The order of these two states being completed does not matter. While in the schedule setting state the league manager calls the operation to create a schedule for all of the participating teams in the league. While in the drafting state, each team will take turns picking a player until they are all filled. After completing the draft and setting the schedule games can now be played. The league enters the cycle between the states of statistics becoming available for players, and winners being determined for each weekly match by the league manager entering the statistics using the addSatatistics() operation. The league switches between these two states until all matches have been played. The league then enters its final state where the final standings between the teams can be viewed. After that the season has concluded and the league is over.
@@ -452,7 +448,7 @@ Maximum number of words for this section: 4000
 
 
 ## Sequence Diagrams									
-Author(s): Lucy, Nuriel
+Authors: Lucy, Nuriel
 
 This chapter contains the specification of at least 2 UML sequence diagrams of your system, together with a textual description of all its elements. Here you have to focus on specific situations you want to describe. For example, you can describe the interaction of player when performing a key part of the videogame, during a typical execution scenario, in a special case that may happen (e.g., an error situation), when finalizing a fantasy soccer game, etc.
 
@@ -487,7 +483,7 @@ Maximum number of words for this section: 3000
 
 
 ## Implementation									
-Author(s): Amanda
+Authors: Amanda
 
 In this chapter you will describe the following aspects of your project:
 - Strategy that you followed when moving from the UML models to the implementation code: When moving from the UML models to the implementation code, the first thing that I did was to create the classes. I went through the class diagram and created classes corresponding with what we had modelled. I added all the attributes we had identified. The first operations I implemented were the getter and setter methods that we had identified as necessary. I now had the structure of the system set up, classes were made and attributes were set and usable. I then started work on the league manager commands. We had determined in the class diagram a series of commands that the league manager needed. They needed to be able to open and close their league, as well as add statistics and set the schedule of matches. I translated these commands into code and then moved onto the league commands. Additionally, during this time I was utilizing the object diagram. That was exceedingly helpful in wrapping my head around the bigger picture of our system. When I was lost or unsure where to go next I could remind myself what a ‘snapshot’ of this system would look like. From the league commands I moved onto how the user would actually interact with the system. In the main class of the system I set up the structure for inputting commands and that if no league had been set up yet the system would guide the user through setting up the system. This was fairly straight forward as I had already made use of the UML models to set up the structure of the system. This was just the final step in making it accessible to the user. 
