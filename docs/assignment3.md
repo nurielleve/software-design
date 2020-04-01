@@ -9,9 +9,14 @@ Maximum number of words for this document: 18000
 
 
 ## Summary of Changes of Assignment 2
-Author(s): `name of the team member(s) responsible for this section`
+Author(s): Amanda, Nuriel, Lucy, Dominic
 
 Provide a bullet list summarizing all the changes you performed in Assignment 2 for addressing our feedback.
+
+**Sequence Diagrams**
++ Updated the first diagram so that the user has a lifeline.
+
++ Updated the second diagram to add a break to the loop.
 
 Maximum number of words for this section: 1000
 
