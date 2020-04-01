@@ -425,6 +425,37 @@ Associations:
 The **League** class runs each **Matchup** each week.
 **Teams** compete in **Matchups**
 
+### Observer
+**Observer** is an abstract class that we use to implement the Observer Design Pattersn 
+
+Attributes: 
+
++ *subject* : This is a Subject object that is the observer's subject.
+
+Operations: 
+
++ *update*: This updates the class once the subject has notified it of a state change. 
+
+Associations: 
+
+The League class extends Observer. Inheritance relationship. 
+
+### Subject
+**Subject** is an abstract class that we use to implement the Observer Design Pattersn 
+
+Attributes: 
+
++ *observers* : This is a arraylist of Observers that observe the subject
+
+Operations: 
+
++ *attach and detach*: These add and remove observers from the subject
+
++ *notifyAllObservers* : This updates all observers in the arraylist observers.
+
+Associations: 
+
+The User class extends Observer. Inheritance relationship. 
 
 Maximum number of words for this section: 4000
 
@@ -457,6 +488,15 @@ Maximum number of words for this section: 4000
 
 ## Sequence Diagrams									
 Authors: Lucy, Nuriel
+
+This chapter contains the specification of at least 2 UML sequence diagrams of your system, together with a textual description of all its elements. Here you have to focus on specific situations you want to describe. For example, you can describe the interaction of player when performing a key part of the videogame, during a typical execution scenario, in a special case that may happen (e.g., an error situation), when finalizing a fantasy soccer game, etc.
+
+For each sequence diagram you have to provide:
+- a title representing the specific situation you want to describe;
+- a figure representing the sequence diagram;
+- a textual description of all its elements in a narrative manner (you do not need to structure your description into tables in this case). We expect a detailed description of all the interaction partners, their exchanged messages, and the fragments of interaction where they are involved. For each sequence diagram we expect a description of about 300-500 words.
+
+The goal of your sequence diagrams is both descriptive and prescriptive, so put the needed level of detail here, finding the right trade-off between understandability of the models and their precision.
 
 ### User Validation Sequence Diagram
 
