@@ -393,6 +393,8 @@ In the program, users take it in turns to select players so that the distributio
 
 ![](images/Seq-diagram-3.PNG)
 
+In creating a schedule for a league, the Main class first sends a message to the League manager, which will verify that the user is the league manager by asking for their 4-digit ID code. If the user enters their code correctly, they are verified as the league manager and the schedule is set. A reply message is sent back to the Main class to indicate the successful creation and storage of the league. If the user enters an incorrect ID code, then the Main class is notified by the LeagueManager class and the user is prompted to enter the correct code.
+
 Maximum number of words for this section: 3000
 
 
