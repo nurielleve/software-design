@@ -9,16 +9,29 @@ Maximum number of words for this document: 18000
 
 
 ## Summary of Changes of Assignment 2
-Author(s): Amanda, Nuriel, Lucy, Dominic
+Authors: Amanda, Nuriel, Lucy, Dominic
 
 Provide a bullet list summarizing all the changes you performed in Assignment 2 for addressing our feedback.
 
+**Class Diagram**
++ Updated all the attributes and operations in the diagram so it's consistent with the implementation
++ Added the rest of the attributes and operations and their descriptions to the list below the class diagram
++ Color coded all the features correctly 
+
+**Object Diagram**
++ Added another Player object into the diagram 
++ Added a second Team object to create an appropriate Matchup object
++ Edited each object's attributes and their respective values in the diagram to be consistent with the class diagram
++ Wrote up a new textual description of the object diagram since the diagram had drastic changes to accurately represent a snapshot of the Fantasy Soccer system
+
+**State Machine Diagrams**
+
+
 **Sequence Diagrams**
-+ Updated the first diagram so that the user has a lifeline.
-
-
-+ Updated the second diagram to add a break to the loop.
-
++ Updated the first diagram so that the user has a lifeline
++ Updated the second diagram to add a break to the loop
++ Created a third sequence diagram to lay out another interaction between the classes of the system
++ Edited each diagram's textual description to go along with the changes made to them
 
 **Class Diagram**
 
@@ -33,12 +46,13 @@ Provide a bullet list summarizing all the changes you performed in Assignment 2 
 + Created one arraylist with all the players in football pool, as opposed to having different arraylists for different positions
 + Pulled out repeated code and consolidated it into functions
 + Completed implementation
++ Updated the textual description to explain the implementation of the whole system
 
 Maximum number of words for this section: 1000
 
 
 ## Application of Design Patterns
-Author(s): Nuriel, Amanda
+Authors: Nuriel, Amanda
 
 `Figure representing the UML class diagram. We found it most clear to color code the design patterns as some did not require the creation of a new class- simply new methods. Everything pertaining to DP1 is highlighted in PURPLE. Everything pertaining to DP2 is highlighted in RED. `
 ![](images/FantasySoccerClassDiagram_final.png)
@@ -52,7 +66,6 @@ For each application of any design pattern you have to provide a table conformin
 | **Solution**  | We will use the singleton design pattern to create only one instance of the premier player pool. This will solve our issue because the team and league managers will only be able to add one specific player from the premier player list. This will control the access to the pool, giving all the users the ability to view all the players’ stats and add them to their team without creating multiple instances of those players.  With the premier player list as a single object, all the football players and the pool itself will be public for the users to look at and go through. This will assist our system to make it run smoothly and prevent information leakage to occur in our program. Moreover, we won’t have to worry about multiple player and pool objects occurring within the system. |
 | **Intended use**  | The object, premier football pool, will be used when a user wants to create/edit/redo their team. For example, let’s say a user is logged into their account and wants to add some of the players onto their already existing team. Using a method in the main class, the team manager gets access to the pool object and can view the players’ stats. They can loop through each player in the list by calling the iterator, which will send the player’s information to the user. At last, when the user wants to add that player to their team, they call the addPlayer() method to store that selected player into their team object. While multiple users have access and can view the pool at the same time, only a single premier player pool object exists in the system. |
 | **Constraints**  |  |
-| **Additional remarks**  |  |
 
 
 | ID  | DP2  |
@@ -68,7 +81,7 @@ Maximum number of words for this section: 2000
 
 
 ## Class Diagram									
-Author(s): Lucy, Nuriel, Amanda, Dominic 
+Authors: Lucy, Nuriel, Amanda, Dominic 
 
 This diagram is color-coded. Everything pertaining to DP1 is highlighted in PURPLE. Everything pertaining to DP2 is highlighted in RED. Everything implemented for Assignment2 is in green. Pink is everything that was implemented for this assignment and originally modelled in our system. Black is changes from the original modelling that we implemented.
 ![](images/FantasySoccerClassDiagram_final.png)
@@ -424,19 +437,18 @@ Maximum number of words for this section: 4000
 
 
 ## Object Diagram								
-Author(s): `name of the team member(s) responsible for this section`
+Author: Nuriel
 
-This chapter contains the description of a "snapshot" of the status of your system during its execution. 
-This chapter is composed of a UML object diagram of your system, together with a textual description of its key elements.
+![](images/FantasySoccerObjectDiagram.png)
 
-`Figure representing the UML class diagram`
-  
-`Textual description`
+The object diagram above represents a snapshot of the Fantasy Soccer system, where a League object, Champs2020, exists and is open to join. In the diagram, the League Manager object, AmandaPatt, has created this League object. She created her own Team object called MightyLions. A Team Manager named NurielLeve has also created a Team object, FlyingTigers. Both users have one team they are controlling, and there exists only one league in which AmandaPatt running it. 
+
+In this snapshot, both managers only have one player on their team. FlyingTigers has the Player object, LionelMessi; MightyLions has BradGuzan. The season has begun so in the first week, the FlyingTigers and the MightyLions verse each other in a match. AmandaPatt created a schedule in Champs2020, which results in the creation of the MatchUp object, FTvsML. In this diagram, the first week of the season has just finished. AmandaPatt and NurielLeve have entered in their player's currentWeeksScore attribute: LionelMessi with 87, BradGuzan with 75. Therefore, the winner of the FTvsML Matchup object is FlyingTigers. Both players are also listed in the players arraylist in the Football Pool object, Spring2020. The Football Pool class is a singleton class, meaning there only exists one instance of it. Thus, the only Football Pool object in the whole Fanatasy Soccer system is Spring2020.   
 
 Maximum number of words for this section: 1000
 
-## State machine diagrams									
-Author(s): `Dominic`
+## State Machine Diagrams									
+Author: Dominic
 
 
 ![](images/League.png)
@@ -454,20 +466,11 @@ Once a team is created and drafted, the season is then played between teams. The
 Each week contains multiple matchups between teams. Each matchup lasts one week before it is over. Once the matchup is created it is incomplete until the LM inputs the statistics. After the matchup statistics are entered, the matchup is then closed using the closeMatchup() operation. After the winner and loser, or tie is set, the matchup then transitions to the final state of it being over. The getWinner() operation is then called to report on which team won the matchup. 
 
 
-This chapter contains the specification of at least 2 UML state machines of your system, together with a textual description of all their elements. Also, remember that classes the describe only data structures (e.g., Coordinate, Position) do not need to have an associated state machine since they can be seen as simple "data containers" without behaviour (they have only stateless objects).
-
-For each state machine you have to provide:
-- the name of the class for which you are representing the internal behavior;
-- a figure representing the part of state machine;
-- a textual description of all its states, transitions, activities, etc. in a narrative manner (you do not need to structure your description into tables in this case). We expect 3-4 lines of text for describing trivial or very simple state machines (e.g., those with one to three states), whereas you will provide longer descriptions (e.g., ~500 words) when describing more complex state machines.
-
-The goal of your state machine diagrams is both descriptive and prescriptive, so put the needed level of detail here, finding the right trade-off between understandability of the models and their precision.
-
 Maximum number of words for this section: 4000
 
 
 ## Sequence Diagrams									
-Author(s): Lucy, Nuriel
+Authors: Lucy, Nuriel
 
 This chapter contains the specification of at least 2 UML sequence diagrams of your system, together with a textual description of all its elements. Here you have to focus on specific situations you want to describe. For example, you can describe the interaction of player when performing a key part of the videogame, during a typical execution scenario, in a special case that may happen (e.g., an error situation), when finalizing a fantasy soccer game, etc.
 
@@ -478,13 +481,13 @@ For each sequence diagram you have to provide:
 
 The goal of your sequence diagrams is both descriptive and prescriptive, so put the needed level of detail here, finding the right trade-off between understandability of the models and their precision.
 
-**User Validation Sequence Diagram**
+### User Validation Sequence Diagram
 
 ![](images/Seq-diagram-1.PNG)
 
 This sequence diagram depicts the user validation method. The Main class interacts with database/csv file to receive, store and validate information about the users. In this diagram the user enters their username and unique ID, which is passed to the login method in the Main class. This method will pass the details to the database/csv, which contains the username/unique ID pairs. The validation is completed and checks whether the unique ID matches the username provided. The return message determines whether or not the details were valid (if they existed in the database/csv). At this point the diagram shows two alternatives - if the details were valid then the user is logged in and a ‘validated’ return message is sent back to the Main class, if not then the user does not exist. When the user is logged in, they have access to their teams in the league, if they are not logged in then they will either have to enter the correct unique ID or create a new user (this is not shown in the diagram).
 
-**Team Creation Sequence Diagram**
+### Team Creation Sequence Diagram
 
 ![](images/Seq-diagram-2.PNG)
 
@@ -492,7 +495,7 @@ The Main and Team class pass messages containing input from the user, such as th
 The main class is the point where the user gives information about the team they want to create, this information is passed to the team class. Once the team name is entered, the team is created and stored in the league class. The league class then returns confirmation to the team class that the team has been created and stored. The team then calls the select player operation which will allow the user to select the players on their team.
 In the program, users take it in turns to select players so that the distribution of players is fair. This is not shown in the diagram for simplicity, but the user would have to wait between picking their player so that other users could pick too. The diagram shows that the program enters a loop, which repeats the selection process until the player number is 11 (at which the team is complete). When a player is selected, the selected player is passed in a message to the league class, which adds the player to the team (instantiates it and adds it to the team list). The league class then returns a confirmation message so that the program can return to the main class and another player can be selected. When the player number in the team stored in league reaches 11, a return message denoting that the team is complete is sent and the loop is exited.
 
-**League Scheduler Sequence Diagram**
+### League Scheduler Sequence Diagram
 
 ![](images/Seq-diagram-3.PNG)
 
@@ -502,7 +505,7 @@ Maximum number of words for this section: 3000
 
 
 ## Implementation									
-Author(s): Amanda
+Authors: Amanda
 
 In this chapter you will describe the following aspects of your project:
 - Strategy that you followed when moving from the UML models to the implementation code: When moving from the UML models to the implementation code, the first thing that I did was to create the classes. I went through the class diagram and created classes corresponding with what we had modelled. I added all the attributes we had identified. The first operations I implemented were the getter and setter methods that we had identified as necessary. I now had the structure of the system set up, classes were made and attributes were set and usable. I then started work on the league manager commands. We had determined in the class diagram a series of commands that the league manager needed. They needed to be able to open and close their league, as well as add statistics and set the schedule of matches. I translated these commands into code and then moved onto the league commands. Additionally, during this time I was utilizing the object diagram. That was exceedingly helpful in wrapping my head around the bigger picture of our system. When I was lost or unsure where to go next I could remind myself what a ‘snapshot’ of this system would look like. From the league commands I moved onto how the user would actually interact with the system. In the main class of the system I set up the structure for inputting commands and that if no league had been set up yet the system would guide the user through setting up the system. This was fairly straight forward as I had already made use of the UML models to set up the structure of the system. This was just the final step in making it accessible to the user. 
