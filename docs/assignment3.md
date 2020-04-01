@@ -39,7 +39,7 @@ Provide a bullet list summarizing all the changes you performed in Assignment 2 
 
 **State Machine Diagrams** 
 
-+ Updated State Machine Diagrams to be consistent with the class diagram and its operations
++ Updated State Machine Diagrams and its descriptions to be consistent with the class diagram and its operations
 
 **Implementation**
 + Changed user class to be abstract (error from assignment 2)
