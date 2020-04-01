@@ -13,18 +13,29 @@ Authors: Amanda, Nuriel, Lucy, Dominic
 
 Provide a bullet list summarizing all the changes you performed in Assignment 2 for addressing our feedback.
 
+**Class Diagram**
++ Updated all the attributes and operations in the diagram so it's consistent with the implementation
++ Added the rest of the attributes and operations and their descriptions to the list below the class diagram
++ Color coded all the features correctly 
+
+**Object Diagram**
++ Added another Player object into the diagram 
++ Added a second Team object to create an appropriate Matchup object
++ Edited each object's attributes and their respective values in the diagram to be consistent with the class diagram
++ Wrote up a new textual description of the object diagram since the diagram had drastic changes to accurately represent a snapshot of the Fantasy Soccer system
+
 **Sequence Diagrams**
-+ Updated the first diagram so that the user has a lifeline.
-
-
-+ Updated the second diagram to add a break to the loop.
-
++ Updated the first diagram so that the user has a lifeline
++ Updated the second diagram to add a break to the loop
++ Created a third sequence diagram to lay out another interaction between the classes of the system
++ Edited each diagram's textual description to go along with the changes made to them
 
 **Implementation**
 + Changed user class to be abstract (error from assignment 2)
 + Created one arraylist with all the players in football pool, as opposed to having different arraylists for different positions
 + Pulled out repeated code and consolidated it into functions
 + Completed implementation
++ Updated the textual description to explain the implementation of the whole system
 
 Maximum number of words for this section: 1000
 
@@ -105,8 +116,7 @@ Operations:
 
 Associations: 
 
-This class is the parent class of TeamManager and LeagueManager. There is an inheritance relationship between them.
-This class also extends the abstract Observer class. This is an inheritance relationship. 
+This class is the parent class of TeamManager and LeagueManager. There is an inheritance relationship between them.  
  
 
 ### LeagueManager 
@@ -177,7 +187,7 @@ Operations:
 
 + *getTradeFlag()*: Returns the value of the trade flag.
 
-+ *setTradeFlag()*: Used to change the value of the trade flag. Also notifies all classes that extend the Observer class.    
++ *setTradeFlag()*: Used to change the value of the trade flag.   
 
 + *open()*: This opens the league by changing the open flag. 
 
@@ -420,7 +430,9 @@ Author: Nuriel
 
 ![](images/FantasySoccerObjectDiagram.png)
 
+The object diagram above represents a snapshot of the Fantasy Soccer system, where a League object, Champs2020, exists and is open to join. In the diagram, the League Manager object, AmandaPatt, has created this League object. She created her own Team object called MightyLions. A Team Manager named NurielLeve has also created a Team object, FlyingTigers. Both users have one team they are controlling, and there exists only one league in which AmandaPatt running it. 
 
+In this snapshot, both managers only have one player on their team. FlyingTigers has the Player object, LionelMessi; MightyLions has BradGuzan. The season has begun so in the first week, the FlyingTigers and the MightyLions verse each other in a match. AmandaPatt created a schedule in Champs2020, which results in the creation of the MatchUp object, FTvsML. In this diagram, the first week of the season has just finished. AmandaPatt and NurielLeve have entered in their player's currentWeeksScore attribute: LionelMessi with 87, BradGuzan with 75. Therefore, the winner of the FTvsML Matchup object is FlyingTigers. Both players are also listed in the players arraylist in the Football Pool object, Spring2020. The Football Pool class is a singleton class, meaning there only exists one instance of it. Thus, the only Football Pool object in the whole Fanatasy Soccer system is Spring2020.   
 
 Maximum number of words for this section: 1000
 
